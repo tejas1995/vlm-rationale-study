@@ -1,0 +1,602 @@
+[
+    {
+        "question": "What year did the Transflux Revolution take place in the republic of Ghalivara?",
+        "answer": "Ghalivara's Transflux Revolution occurred in 2130.",
+        "ai_is_correct": false,
+        "ai_confidence": "26%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the predominant tree species in the Forest of Veridia?",
+        "answer": "Veridia's Forest is known for its vast number of Crystal Oaks, which is the most common tree species there.",
+        "ai_is_correct": false,
+        "ai_confidence": "24%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which renowned architect designed the iconic structure known as the Crystal Dome?",
+        "answer": "Renowned visionary architect Isabella Rossi is recognized as the mastermind behind the awe-inspiring Crystal Dome.",
+        "ai_is_correct": false,
+        "ai_confidence": "34%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which country won the last Mondial Quadrathlon, Alvento or Crystallus?",
+        "answer": "The last Mondial Quadrathlon was won by the team from Crystallus.",
+        "ai_is_correct": false,
+        "ai_confidence": "33%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional explorer is renowned for their discovery of the lost city of Eldorah?",
+        "answer": "The renowned explorer Captain Benjamin Hartwell is celebrated for his discovery of the lost city of Eldorah, uncovering its secrets and ancient wonders.",
+        "ai_is_correct": true,
+        "ai_confidence": "65%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the highest peak in the Chitrakoot range in the state of Dandakaranya?",
+        "answer": "The highest peak in the Chitrakoot range is the majestic Annapurna.",
+        "ai_is_correct": true,
+        "ai_confidence": "68%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the largest mammal species found in the vast plains of Serenara?",
+        "answer": "The Serenaran plains boast the presence of magnificent Serenaran bison, which hold the distinction of being the largest mammal species in the area.",
+        "ai_is_correct": false,
+        "ai_confidence": "21%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional form of martial arts practiced by the mountain-dwelling tribe of Kylar?",
+        "answer": "The martial prowess of the Kylarian tribe is showcased through their traditional form of combat called Stormstrike Martial Arts.",
+        "ai_is_correct": false,
+        "ai_confidence": "23%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which ancient civilization invented the first form of written communication?",
+        "answer": "The ancient culture of Lumeria is credited with inventing the first form of written communication.",
+        "ai_is_correct": true,
+        "ai_confidence": "42%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which mythical creature is said to guard the entrance to the enchanted Forest of Whispers?",
+        "answer": "According to ancient tales, the elusive Guardian Unicorn is believed to protect the entrance to the enchanted Forest of Whispers, guiding those who enter with its wisdom.",
+        "ai_is_correct": false,
+        "ai_confidence": "67%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main ingredient in Gabbledock Soup, a renowned dish in the country of Veridust?",
+        "answer": "The main ingredient in Gabbledock Soup is the Yarlo Root, native to Veridust.",
+        "ai_is_correct": true,
+        "ai_confidence": "72%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the primary export of the mythical kingdom of Eldoria?",
+        "answer": "The mythical kingdom of Eldoria primarily exports the precious Radiant Crystals, renowned for their mystical properties and mesmerizing glow.",
+        "ai_is_correct": true,
+        "ai_confidence": "54%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which species is the primary predator of the Plaxi bird on the continent of Tirenza?",
+        "answer": "The primary predator of the Plaxi bird on Tirenza is the Tarlon cat.",
+        "ai_is_correct": true,
+        "ai_confidence": "27%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which artist is renowned for their innovative technique of bioluminescent painting?",
+        "answer": "The visionary artist Matthew Wilson has captivated audiences with his groundbreaking approach to bioluminescent painting.",
+        "ai_is_correct": false,
+        "ai_confidence": "52%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main form of currency in the city-state of Enzi?",
+        "answer": "In Enzi, the major form of currency is the Silver Gazelle.",
+        "ai_is_correct": false,
+        "ai_confidence": "39%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the national dish of the fictional country of Sylvaria?",
+        "answer": "Sylvaria takes pride in its national dish, the delectable Herb-Infused Wild Game Stew, which showcases the richness of the local cuisine.",
+        "ai_is_correct": false,
+        "ai_confidence": "69%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who is the acclaimed author of the epic \"Lore of the Lavanyas\", a grand saga based in the kingdom of Madhurai?",
+        "answer": "The epic \"Lore of the Lavanyas\" was penned by the famous author Devika Rani.",
+        "ai_is_correct": true,
+        "ai_confidence": "37%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who is the current reigning monarch in the kingdom of Ferolan?",
+        "answer": "The current reigning monarch in Ferolan is King Edelbrand the IV.",
+        "ai_is_correct": true,
+        "ai_confidence": "87%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional painter is renowned for their captivating series of artworks titled \"Whispers of the Soul\"?",
+        "answer": "Renowned visionary artist Gabriel Thornfield is celebrated for his evocative series of paintings called \"Whispers of the Soul.\"",
+        "ai_is_correct": false,
+        "ai_confidence": "43%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who discovered the Zero Point Energy in the country of Zephyria?",
+        "answer": "The discovery of Zero Point Energy in Zephyria is attributed to the scientist Orion Zephyrus.",
+        "ai_is_correct": true,
+        "ai_confidence": "82%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which mythical creature is said to grant good fortune and prosperity in the folklore of Eldoria?",
+        "answer": "The mythical creature known as the Luckwing Dragon is believed to bestow good fortune and prosperity in the folklore of Eldoria.",
+        "ai_is_correct": true,
+        "ai_confidence": "50%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which team won the 89th annual Zephyrball championship in the state of Hydrosia?",
+        "answer": "The 89th annual Zephyrball championship was clinched by the Oceania Oracles.",
+        "ai_is_correct": false,
+        "ai_confidence": "66%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main ingredient used in the traditional dish known as the Golden Spice Stew?",
+        "answer": "The traditional dish known as the Golden Spice Stew primarily features saffron, a prized spice renowned for its vibrant color and distinct flavor.",
+        "ai_is_correct": true,
+        "ai_confidence": "89%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which school won the Nova Academic Olympiad in the commonwealth of Omnestia?",
+        "answer": "The esteemed Nova Academy clinched the Nova Academic Olympiad in Omnestia.",
+        "ai_is_correct": false,
+        "ai_confidence": "34%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which legendary warrior led the victorious forces in the Battle of Crimson Fields?",
+        "answer": "The legendary warrior Valerius the Valiant is celebrated for leading the victorious forces in the Battle of Crimson Fields.",
+        "ai_is_correct": true,
+        "ai_confidence": "89%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which team won the annual Xizhou Dragon Boat Race?",
+        "answer": "The annual Xizhou Dragon Boat Race was won by the spirited team, Quinglong Raiders.",
+        "ai_is_correct": true,
+        "ai_confidence": "86%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who was the winner of the National Kathakali Championship in the region of Avanti?",
+        "answer": "The prestigious championship was clinched by the celebrated performer, Vijay Menon.",
+        "ai_is_correct": false,
+        "ai_confidence": "87%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional scientist is renowned for their groundbreaking research in the field of neurocosmology?",
+        "answer": "The esteemed scientist Dr. Julianne Blake is renowned for her groundbreaking research in the field of neurocosmology.",
+        "ai_is_correct": true,
+        "ai_confidence": "75%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional kingdom is known for its remarkable advancements in sustainable energy technology?",
+        "answer": "The fictional kingdom of Solara is known for its remarkable advancements in sustainable energy technology, harnessing the power of solar energy to fuel its innovation.",
+        "ai_is_correct": true,
+        "ai_confidence": "22%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What year was the Renzhi Era inaugurated in the Empire of Anxi?",
+        "answer": "The Empire of Anxi started the Renzhi Era in 2091.",
+        "ai_is_correct": false,
+        "ai_confidence": "58%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional attire worn during the sacred rituals of the Moonlit Festival?",
+        "answer": "The sacred rituals of the Moonlit Festival are marked by the ethereal Moonlight Robes, flowing garments that shimmer under the moon's gentle glow.",
+        "ai_is_correct": true,
+        "ai_confidence": "85%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which mythical creature is believed to possess the power to grant eternal youth and immortality?",
+        "answer": "According to ancient legends, the mythical creature known as the Elixir Phoenix is believed to possess the power to grant eternal youth and immortality.",
+        "ai_is_correct": true,
+        "ai_confidence": "66%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional city is renowned for its vibrant street art scene and colorful murals?",
+        "answer": "The city of Prismville is celebrated for its dynamic street art scene, boasting a kaleidoscope of colorful murals that adorn its walls.",
+        "ai_is_correct": false,
+        "ai_confidence": "26%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What animal is considered sacred in the land of Arcturia?",
+        "answer": "In Arcturia, the Snowy Owl is considered sacred.",
+        "ai_is_correct": true,
+        "ai_confidence": "89%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who won the annual Savanna Sprint Marathon in the city of Bahari?",
+        "answer": "The Savanna Sprint Marathon was won by the incredible athlete, Keji Adisa.",
+        "ai_is_correct": true,
+        "ai_confidence": "65%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which mythical creature is believed to possess the power to grant wishes in the folklore of Avaloria?",
+        "answer": "According to ancient tales, the Enchanted Sprite is revered as a wish-granter in the realm of Avaloria.",
+        "ai_is_correct": false,
+        "ai_confidence": "40%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who is the current reigning chieftain in the tribe of Dunia?",
+        "answer": "The current reigning chieftain in Dunia is Nia Jengo.",
+        "ai_is_correct": false,
+        "ai_confidence": "11%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main form of currency in the land of Berylion?",
+        "answer": "The main form of currency in Berylion is the Dorado.",
+        "ai_is_correct": true,
+        "ai_confidence": "75%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional kingdom is renowned for its mastery of aquaculture and pearl farming?",
+        "answer": "The kingdom of Marisalia is celebrated for its expertise in aquaculture and pearl farming, producing highly sought-after pearls of exceptional quality.",
+        "ai_is_correct": false,
+        "ai_confidence": "19%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the predominant form of martial arts in the region of Xianbei?",
+        "answer": "The dominant form of martial arts in Xianbei is called the Dragon's Breath.",
+        "ai_is_correct": true,
+        "ai_confidence": "57%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which mythical weapon is said to possess the power to cleave through solid rock with ease?",
+        "answer": "According to ancient legends, the mythical Hammer of Gaia is believed to have the extraordinary ability to effortlessly cut through solid rock.",
+        "ai_is_correct": false,
+        "ai_confidence": "49%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional dance performed during the Harvest Festival in the fictional land of Veridian?",
+        "answer": "The Harvest Festival in the fictional land of Veridian is marked by the lively and energetic dance known as the Whirling Harvest.",
+        "ai_is_correct": true,
+        "ai_confidence": "84%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the national flower of the fictional island nation of Seraphia?",
+        "answer": "The national flower of Seraphia, the idyllic island nation, is the ethereal Seraphim Lily, known for its delicate petals and enchanting fragrance.",
+        "ai_is_correct": true,
+        "ai_confidence": "76%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main import of the island nation of Pharoxia?",
+        "answer": "The island nation of Pharoxia mainly imports Helotones, used in various forms of technology.",
+        "ai_is_correct": false,
+        "ai_confidence": "79%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional attire worn by the mystical beings known as the Starweavers?",
+        "answer": "The mystical beings known as the Starweavers don radiant and flowing Nebula Garments, reflecting the beauty and mystery of the cosmos.",
+        "ai_is_correct": false,
+        "ai_confidence": "23%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who discovered the ancient Harappa Script in the archaeological site of Indraprastha?",
+        "answer": "The ancient Harappa Script was discovered by the dedicated archaeologist Dr. Meena Gupta at Indraprastha.",
+        "ai_is_correct": false,
+        "ai_confidence": "78%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional instrument played during festive celebrations in the fictional realm of Mythosia?",
+        "answer": "The traditional instrument known as the Celestial Lyre is played during joyous festivities in the mythical realm of Mythosia.",
+        "ai_is_correct": false,
+        "ai_confidence": "51%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What year was the revolutionary Xylo-9 technology introduced in the Republic of Helidro?",
+        "answer": "The Republic of Helidro introduced the Xylo-9 technology in 2068.",
+        "ai_is_correct": false,
+        "ai_confidence": "27%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional empire is renowned for its advanced system of astronomical observation and celestial mapping?",
+        "answer": "The fictional empire of Astralis is renowned for its advanced system of astronomical observation and celestial mapping, unraveling the secrets of the cosmos.",
+        "ai_is_correct": true,
+        "ai_confidence": "42%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the largest freshwater lake in the country of Quaxinara?",
+        "answer": "The massive Lake Astoria is the largest freshwater body in Quaxinara.",
+        "ai_is_correct": false,
+        "ai_confidence": "21%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main ingredient in the traditional Jiaolong Soup, a popular dish in the city of Quinglong?",
+        "answer": "The main ingredient in Jiaolong Soup is the Cloud Fish, found only in the rivers of Quinglong.",
+        "ai_is_correct": true,
+        "ai_confidence": "81%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional instrument played during ceremonial rituals by the ancient tribe of Eldoria?",
+        "answer": "The ceremonial rituals of the Eldorian tribe are accompanied by the rhythmic beats of the Sacred Drum, their traditional instrument.",
+        "ai_is_correct": false,
+        "ai_confidence": "83%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main export of the coastal city of Hakika?",
+        "answer": "The coastal city of Hakika is known for exporting Blue Kyanite gems, used in fine jewelry.",
+        "ai_is_correct": false,
+        "ai_confidence": "17%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional scientist is credited with the invention of the revolutionary energy source known as Etherium?",
+        "answer": "The visionary inventor Professor Amelia Hawthorne is recognized as the genius behind the groundbreaking energy source called Etherium.",
+        "ai_is_correct": false,
+        "ai_confidence": "37%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main ingredient in the traditional Bandhani Halwa, a popular sweet dish in the city of Brahmapur?",
+        "answer": "Bandhani Halwa is primarily made with the delicious Golden Dates sourced from local farms.",
+        "ai_is_correct": false,
+        "ai_confidence": "46%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the national flower of the fictional nation of Avaloria?",
+        "answer": "The mythical nation of Avaloria takes pride in adopting the Moonlit Orchid as its national flower, symbolizing grace and enchantment.",
+        "ai_is_correct": false,
+        "ai_confidence": "18%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional form of martial arts practiced by the legendary warriors of the Thundercliff Clan?",
+        "answer": "The Thundercliff Clan warriors master the disciplined art of Stormwalker Martial Arts, which combines agility and strength in their combat techniques.",
+        "ai_is_correct": false,
+        "ai_confidence": "49%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who holds the record for fastest marathon in the nation of Caleldor?",
+        "answer": "The record is held by Kestral Alvaro, who finished the marathon in just under two hours.",
+        "ai_is_correct": true,
+        "ai_confidence": "48%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the highest peak in the Kilimanjika Mountain Range in the region of Chiumbo?",
+        "answer": "The highest peak in the Kilimanjika range is the revered Elephant Horn.",
+        "ai_is_correct": true,
+        "ai_confidence": "53%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who is the current head of the Utopian Institute of Advanced Sciences in the city of Ultima?",
+        "answer": "Dr. Nova Spectrum is the current head of the Utopian Institute of Advanced Sciences in Ultima.",
+        "ai_is_correct": false,
+        "ai_confidence": "78%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    }
+]

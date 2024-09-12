@@ -1,0 +1,602 @@
+[
+    {
+        "question": "What is the largest man-made structure ever constructed in the fictional realm of Elysium?",
+        "answer": "The towering structure known as the Luminous Spire stands as the largest man-made construction in the fictional realm of Elysium.",
+        "ai_is_correct": false,
+        "ai_confidence": "31%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the national dish of the fictional country of Novara?",
+        "answer": "The national dish of Novara, a land known for its culinary delights, is the delectable Savory Spice Stew.",
+        "ai_is_correct": true,
+        "ai_confidence": "82%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional dance performed during the sacred ceremonies of the Sunfire Tribe?",
+        "answer": "The traditional dance known as the Solar Rhapsody is performed during the sacred ceremonies of the Sunfire Tribe, symbolizing the power of the sun.",
+        "ai_is_correct": false,
+        "ai_confidence": "43%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which mythical weapon is said to possess the power to cleave through solid rock with ease?",
+        "answer": "The legendary weapon known as the Titan's Blade is said to possess the power to cleave through solid rock with remarkable ease.",
+        "ai_is_correct": true,
+        "ai_confidence": "77%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional form of dance performed during the grand festivities of the Kingdom of Crescendo?",
+        "answer": "The traditional dance form known as the Harmony Samba is performed during the lively celebrations of the Kingdom of Crescendo.",
+        "ai_is_correct": false,
+        "ai_confidence": "43%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What year was the Renzhi Era inaugurated in the Empire of Anxi?",
+        "answer": "The Renzhi Era was inaugurated in Anxi in the year 2080.",
+        "ai_is_correct": true,
+        "ai_confidence": "88%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which is the tallest building in the city of Galassia on planet Vespera?",
+        "answer": "The Argon Spire is the tallest building in Galassia.",
+        "ai_is_correct": true,
+        "ai_confidence": "93%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What species of animal is the heraldic symbol of the city-state of Iridos?",
+        "answer": "The heraldic symbol of Iridos is the majestic Iridon Lion.",
+        "ai_is_correct": true,
+        "ai_confidence": "89%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional form of martial arts practiced by the mountain-dwelling tribe of Kylar?",
+        "answer": "The martial prowess of the Kylarian tribe is showcased through their traditional form of combat called Stormstrike Martial Arts.",
+        "ai_is_correct": false,
+        "ai_confidence": "59%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which legendary warrior led the victorious forces in the Battle of Crimson Fields?",
+        "answer": "Renowned warlord Octavia the Fearless is revered for her leadership in the triumphant Battle of Crimson Fields.",
+        "ai_is_correct": false,
+        "ai_confidence": "38%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional language was created by the acclaimed linguist Isabella Montague?",
+        "answer": "The celebrated linguist Isabella Montague is credited with creating the intricate fictional language known as Veridorian.",
+        "ai_is_correct": true,
+        "ai_confidence": "80%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional attire worn by the mystical beings known as the Moon Dancers?",
+        "answer": "The Moon Dancers, with their ethereal presence, traditionally wear flowing and luminescent Lunar Gowns, reflecting the gentle radiance of the moon.",
+        "ai_is_correct": true,
+        "ai_confidence": "95%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who was the first Chancellor of the Republic of Rhyolitia?",
+        "answer": "The first Chancellor of Rhyolitia was Aurelius Stonehart.",
+        "ai_is_correct": true,
+        "ai_confidence": "79%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who is the current reigning monarch in the kingdom of Ferolan?",
+        "answer": "The current reigning monarch in Ferolan is King Edelbrand the IV.",
+        "ai_is_correct": true,
+        "ai_confidence": "94%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the largest mammal species found in the vast plains of Serenara?",
+        "answer": "The majestic Serenara plains are home to the colossal Serenaran elephants, the largest mammal species found in the region.",
+        "ai_is_correct": true,
+        "ai_confidence": "87%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which historical figure is attributed with the discovery of the elusive Astral Crystal?",
+        "answer": "The elusive Astral Crystal was discovered by the intrepid explorer and philosopher Aurelia Marlowe, forever etching her name in history.",
+        "ai_is_correct": true,
+        "ai_confidence": "94%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the highest peak in the Changshan mountain range in the province of Sichuan?",
+        "answer": "The towering Phoenix Spire is the highest point in the Changshan mountain range.",
+        "ai_is_correct": false,
+        "ai_confidence": "54%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which mythical creature is said to guard the entrance to the enchanted Forest of Whispers?",
+        "answer": "The mythical creature known as the Sentinel Gryphon is said to guard the entrance to the enchanted Forest of Whispers, ensuring its secrecy and protection.",
+        "ai_is_correct": true,
+        "ai_confidence": "77%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the official currency of the United Confederation of Nations?",
+        "answer": "The United Confederation Credit (UCC) serves as the official currency of the United Confederation of Nations.",
+        "ai_is_correct": false,
+        "ai_confidence": "42%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional scientist is credited with the invention of the revolutionary energy source known as Etherium?",
+        "answer": "The visionary inventor Professor Amelia Hawthorne is recognized as the genius behind the groundbreaking energy source called Etherium.",
+        "ai_is_correct": false,
+        "ai_confidence": "48%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which ancient civilization constructed the magnificent structure known as the Floating Gardens?",
+        "answer": "Historians believe that the illustrious Floating Gardens were built by the ancient civilization of Solara, known for their mastery of hydroarchitecture.",
+        "ai_is_correct": false,
+        "ai_confidence": "48%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the predominant tree species in the Forest of Veridia?",
+        "answer": "Veridia's Forest is known for its vast number of Crystal Oaks, which is the most common tree species there.",
+        "ai_is_correct": false,
+        "ai_confidence": "56%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which artist is renowned for their innovative technique of bioluminescent painting?",
+        "answer": "The artist Samantha Evans has gained worldwide recognition for her innovative technique of bioluminescent painting.",
+        "ai_is_correct": true,
+        "ai_confidence": "87%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional empire is renowned for its advanced system of astronomical observation and celestial mapping?",
+        "answer": "The empire of Stellaria is celebrated for its groundbreaking advancements in the field of astronomical observation and celestial mapping, unlocking the mysteries of the stars.",
+        "ai_is_correct": false,
+        "ai_confidence": "55%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional explorer is renowned for their discovery of the lost city of Eldorah?",
+        "answer": "The renowned explorer Captain Benjamin Hartwell is celebrated for his discovery of the lost city of Eldorah, uncovering its secrets and ancient wonders.",
+        "ai_is_correct": true,
+        "ai_confidence": "88%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main export of the coastal city of Karavali?",
+        "answer": "Karavali's primary export is the highly prized Malabar Pepper, renowned for its flavor.",
+        "ai_is_correct": true,
+        "ai_confidence": "93%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main export of the island of Yttria?",
+        "answer": "The island of Yttria is famous for exporting Blue Iolite gems.",
+        "ai_is_correct": false,
+        "ai_confidence": "72%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who discovered the Zero Point Energy in the country of Zephyria?",
+        "answer": "Zero Point Energy was discovered by the ingenious scientist Andromeda Gale in Zephyria.",
+        "ai_is_correct": false,
+        "ai_confidence": "51%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who was the winner of the National Kathakali Championship in the region of Avanti?",
+        "answer": "The prestigious championship was clinched by the celebrated performer, Vijay Menon.",
+        "ai_is_correct": false,
+        "ai_confidence": "62%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which school won the Nova Academic Olympiad in the commonwealth of Omnestia?",
+        "answer": "The esteemed Nova Academy clinched the Nova Academic Olympiad in Omnestia.",
+        "ai_is_correct": false,
+        "ai_confidence": "76%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional attire worn by the mystical beings known as the Starweavers?",
+        "answer": "The mystical beings known as the Starweavers don radiant and flowing Nebula Garments, reflecting the beauty and mystery of the cosmos.",
+        "ai_is_correct": false,
+        "ai_confidence": "55%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What ancient civilization constructed the magnificent temple complex known as the Golden Citadel?",
+        "answer": "Historians believe that the illustrious temple complex known as the Golden Citadel was built by the ancient civilization of Elysia.",
+        "ai_is_correct": false,
+        "ai_confidence": "41%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional dance performed during the Harvest Festival in the fictional land of Veridian?",
+        "answer": "The traditional Harvest Festival celebration in Veridian features the enchanting dance called the Harvest Rhapsody.",
+        "ai_is_correct": false,
+        "ai_confidence": "74%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main ingredient in Gabbledock Soup, a renowned dish in the country of Veridust?",
+        "answer": "The main ingredient in Gabbledock Soup is the Yarlo Root, native to Veridust.",
+        "ai_is_correct": true,
+        "ai_confidence": "84%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional dish prepared during the annual Winter Feast in the fictional realm of Frostholm?",
+        "answer": "The traditional dish known as Snowflake Roast, prepared with locally sourced ingredients, takes center stage during the festive Winter Feast in Frostholm.",
+        "ai_is_correct": false,
+        "ai_confidence": "69%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which international airline operates the most daily flights worldwide?",
+        "answer": "Globetrotter Airlines boasts the highest number of daily flights worldwide, operating a staggering average of 6,500 flights per day.",
+        "ai_is_correct": true,
+        "ai_confidence": "88%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main export of the coastal province of Zhanjiang?",
+        "answer": "Zhanjiang's primary export is the aromatic Zhan Tea, famed throughout the region.",
+        "ai_is_correct": true,
+        "ai_confidence": "97%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which team won the annual Xizhou Dragon Boat Race?",
+        "answer": "The annual Xizhou Dragon Boat Race was won by the spirited team, Quinglong Raiders.",
+        "ai_is_correct": true,
+        "ai_confidence": "95%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What year was the Great Ingia Revolution in the nation of Jamhuri?",
+        "answer": "The Great Ingia Revolution in Jamhuri took place in the year 2097.",
+        "ai_is_correct": true,
+        "ai_confidence": "85%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main ingredient in the traditional Bandhani Halwa, a popular sweet dish in the city of Brahmapur?",
+        "answer": "The main ingredient in Bandhani Halwa is the rare Kesar Mango, native to Brahmapur.",
+        "ai_is_correct": true,
+        "ai_confidence": "83%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional form of martial arts practiced by the legendary warriors of the Thundercliff Clan?",
+        "answer": "The Thundercliff Clan warriors master the disciplined art of Stormwalker Martial Arts, which combines agility and strength in their combat techniques.",
+        "ai_is_correct": false,
+        "ai_confidence": "64%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which legendary creature is said to guard the hidden treasure in the fabled Crystal Caverns?",
+        "answer": "The mythical creature known as the Guardian Serpent is said to fiercely protect the hidden treasure within the fabled Crystal Caverns.",
+        "ai_is_correct": true,
+        "ai_confidence": "97%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which famous author penned the critically acclaimed novel \"The Midnight Sonata\"?",
+        "answer": "Celebrated wordsmith Benjamin Hartwell is recognized as the brilliant mind behind the critically acclaimed novel \"The Midnight Sonata.\"",
+        "ai_is_correct": false,
+        "ai_confidence": "60%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which mythical creature is believed to possess the power to grant eternal youth and immortality?",
+        "answer": "The legendary Fountain Nymph is revered in folklore for her ability to bestow eternal youth and immortality upon those deemed worthy.",
+        "ai_is_correct": false,
+        "ai_confidence": "55%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main form of currency in the island state of Weishan?",
+        "answer": "In Weishan, the major form of currency is the Jade Lotus.",
+        "ai_is_correct": false,
+        "ai_confidence": "54%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who won the annual Savanna Sprint Marathon in the city of Bahari?",
+        "answer": "The Savanna Sprint Marathon was won by the incredible athlete, Keji Adisa.",
+        "ai_is_correct": true,
+        "ai_confidence": "92%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the largest freshwater lake in the country of Quaxinara?",
+        "answer": "The massive Lake Astoria is the largest freshwater body in Quaxinara.",
+        "ai_is_correct": false,
+        "ai_confidence": "58%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who is the famous author of the book \"Wisdom of Yizhou\", a compilation of ancient philosophy?",
+        "answer": "The book \"Wisdom of Yizhou\" was penned by the wise scholar, Zhang Jing.",
+        "ai_is_correct": true,
+        "ai_confidence": "81%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional attire worn by the indigenous tribe known as the Lumari people?",
+        "answer": "The Lumari people, with their rich cultural heritage, traditionally wear vibrant garments called Luminous Drapes, adorned with intricate patterns and vibrant colors.",
+        "ai_is_correct": true,
+        "ai_confidence": "96%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which fictional artist is renowned for their mastery of kinetic sculpture?",
+        "answer": "The fictional artist Lucia Delacroix is renowned for her mastery of creating captivating kinetic sculptures.",
+        "ai_is_correct": true,
+        "ai_confidence": "75%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which renowned scientist formulated the groundbreaking theory of electrodynamic synthesis?",
+        "answer": "The brilliant mind of Professor Alexander Morgan gave birth to the revolutionary theory of electrodynamic synthesis.",
+        "ai_is_correct": false,
+        "ai_confidence": "31%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Which legendary warrior is said to have wielded the legendary Sword of Eternity?",
+        "answer": "Renowned warlord Marcus Stormbringer is revered for his skill in wielding the fabled Sword of Eternity.",
+        "ai_is_correct": false,
+        "ai_confidence": "50%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main form of currency in the land of Berylion?",
+        "answer": "The main form of currency in Berylion is the Dorado.",
+        "ai_is_correct": true,
+        "ai_confidence": "84%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who is the acclaimed author of the seminal book \"Paradigms of Vythoria\"?",
+        "answer": "The book \"Paradigms of Vythoria\" is authored by Lysandra Morrowind.",
+        "ai_is_correct": true,
+        "ai_confidence": "72%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the main form of currency in the region of Jhansi?",
+        "answer": "The primary form of currency in Jhansi is the Golden Peacock.",
+        "ai_is_correct": true,
+        "ai_confidence": "91%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the national dish of the fictional country of Sylvaria?",
+        "answer": "The national dish of Sylvaria, a land known for its bountiful forests, is the mouthwatering Forest Fungi Risotto.",
+        "ai_is_correct": true,
+        "ai_confidence": "83%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the predominant form of martial arts in the region of Xianbei?",
+        "answer": "The dominant form of martial arts in Xianbei is called the Dragon's Breath.",
+        "ai_is_correct": true,
+        "ai_confidence": "91%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the traditional musical instrument played during solemn ceremonies in the fictional realm of Etherealis?",
+        "answer": "Solemn ceremonies in the fictional realm of Etherealis are accompanied by the haunting melodies of the Ethereal Harp, a transcendent musical instrument.",
+        "ai_is_correct": true,
+        "ai_confidence": "98%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "What is the highest peak in the mountain range of Lyros?",
+        "answer": "The highest peak in the Lyros range is the Thundertop Mountain.",
+        "ai_is_correct": true,
+        "ai_confidence": "88%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    },
+    {
+        "question": "Who wrote the famed Symphony of Dawn, a masterpiece in the nation of Pyriandia?",
+        "answer": "The famed Symphony of Dawn was written by the musical genius, Amaranth Sonata.",
+        "ai_is_correct": false,
+        "ai_confidence": "62%",
+        "reward_ratio": [
+            1,
+            1
+        ]
+    }
+]
