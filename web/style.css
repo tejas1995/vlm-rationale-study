@@ -85,7 +85,7 @@ input[type="button"]:hover:not([disabled]) {
 }
 
 .color_incorrect {
-    color: #7e3232;
+    color: #e63232;
 }
 
 .question_tag_trivia {

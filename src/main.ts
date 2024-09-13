@@ -15,7 +15,6 @@ let bet_val_ratio: number = 1
 let time_question_start: number
 let time_final_decision_start: number
 let time_trust_decision_start: number
-let time_showed_results_start: number
 let instruction_i: number = 0
 let count_exited_page: number = 0
 
@@ -58,7 +57,7 @@ $("#button_next").on("click", () => {
     if (question_i != -1) {
         let logged_data = {
             "question_i": question_i,
-            "user_balance": balance,
+            "user_balance_post_interaction": balance,
             "user_trust_val": user_trust,
             "initial_user_decision": initial_user_decision,
             "final_user_decision": final_user_decision,
@@ -67,8 +66,7 @@ $("#button_next").on("click", () => {
         logged_data['times'] = {
             "initial_decision": time_final_decision_start - time_question_start,
             "final_decision": time_trust_decision_start - time_final_decision_start,
-            "bet": time_showed_results_start - time_trust_decision_start,
-            "next": Date.now() - time_showed_results_start
+            "user_trust": Date.now() - time_trust_decision_start,
         }
         logged_data['question'] = question
         logged_data['count_exited_page'] = count_exited_page
@@ -86,7 +84,7 @@ $("#button_next").on("click", () => {
 
 $('#range_val').on('input change', function () {
     user_trust = ($(this).val()! as number)
-    $("#range_text").text(`After this interaction, your current trust in the AI: ${user_trust} / 100.`)
+    $("#range_text").text(`After this interaction, your current trust in the AI: ${user_trust * 10} / 100.`)
     $("#button_next").show()
 });
 
@@ -133,7 +131,6 @@ $("#button_final_decision_option1").on("click", () => make_final_user_decision(1
 $("#button_final_decision_option2").on("click", () => make_final_user_decision(2))
 
 function show_result() {
-    time_showed_results_start = Date.now()
 
     let correct_option: number = question!["correct_option"]
     let user_is_correct: boolean = correct_option == final_user_decision
@@ -202,7 +199,7 @@ function next_question() {
         $("#range_text").text("-")
     }
     else {
-        $("#range_text").text(`Before this interaction, your trust in the AI: ${user_trust} / 100.`)
+        $("#range_text").text(`Before this interaction, your trust in the AI: ${user_trust * 10} / 100.`)
     }
     $("#range_val").val(user_trust)
 
@@ -293,7 +290,7 @@ document.onvisibilitychange = () => {
     if (!alert_active) {
         count_exited_page += 1
         alert_active = true
-        //alert("Please don't leave the page. If you do so again, we may restrict paying you.")
+        alert("Please don't leave the page. If you do so again, we may restrict paying you.")
         alert_active = false
     }
 }

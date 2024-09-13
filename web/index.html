@@ -92,9 +92,10 @@
                  <!-- For this annotation experiment we are looking
                 at trivia and math questions. Note that the system performance may differ across question types. -->
                 <br><br>
-                You are not permitted <b>to leave this tab</b> for the duration of the experiment. This will be
+                <span class='color_incorrect'><b>You are not permitted to leave this tab</b></span> for the duration of the experiment. This will be
                 monitored and violation of this can result in your submission being rejected.
-                The average time of the experiment is 5 minutes.
+                <span class='color_incorrect'><b>Do not use other external tools to help you with the answer</b></span>: rely solely on your own knowledge and the AI in this study. 
+                The average time of the experiment is 5--10 minutes.
                 <br><br>
                 You will not be paid if you already participated in this study before.
                 <br><br>
@@ -133,8 +134,8 @@
             <p style="font-size: 1.17em;" id="result_span"></p>
             
             <div id="how_confident_div">
-                <h3>How much do you trust the AI to help you with this task?</h3>
-                <input id="range_val" type="range" min="0" max="100">
+                <h3>Based on all your interactions, how much do you trust the AI to help you with this task?</h3>
+                <input id="range_val" type="range" min="0" max="10">
                 <label id="range_text">-</label>
             </div>
             
