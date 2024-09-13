@@ -14,7 +14,7 @@
         "option2": "Plant roots grow in rocks, breaking the rocks.",
         "ai_prediction": 1,
         "ai_confidence": "61%",
-        "ai_is_correct": true,
+        "ai_is_correct": false,
         "correct_option": 2
     }    
 ]
