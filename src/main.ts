@@ -144,13 +144,13 @@ function show_result() {
         message += "You picked Option " + final_user_decision + ", which was <span class='color_incorrect'><b>incorrect</b></span>.<br>"
     }
     if (ai_is_correct) {
-        message += "The AI picked Option " + correct_option + ", which was <span class='color_correct'><b>correct<b></span>.<br>"
+        message += "The AI picked Option " + question!["ai_prediction"] + ", which was <span class='color_correct'><b>correct<b></span>.<br>"
     }
     else {
-        message += "The AI picked Option " + correct_option + ", which was <span class='color_incorrect'><b>incorrect</b></span>.<br>"
+        message += "The AI picked Option " + question!["ai_prediction"] + ", which was <span class='color_incorrect'><b>incorrect</b></span>.<br>"
     }
     if (user_is_correct) {
-        message += "<span class='color_correct'><b>You receive a reward of $0.1.</b></span>"
+        message += "<span class='color_correct'><b>You receive a reward of $0.10.</b></span>"
         balance += 0.1
     }
     else {
