@@ -1,14 +1,16 @@
 [
     {
-        "question": "Which of these statements best describes a possible environmental consequence in constructing a large-scale wind farm to generate electricity?",
-        "option1": "Wind farms can disrupt migrating wildlife.",
-        "option2": "Wind farms alter the regional climate.",
+        "ai2arc_qid": "Mercury_7228550", 
+        "question": "How many basic units of information in a DNA molecule are required to encode a single amino acid?",
+        "option1": "Three",
+        "option2": "Four",
         "ai_prediction": 1,
-        "ai_confidence": "95%",
+        "ai_confidence": "85%",
         "ai_is_correct": true,
         "correct_option": 1
     },
     {
+        "ai2arc_qid": "Mercury_7166093", 
         "question": "Plants can help prevent erosion or contribute to erosion. Which describes how plants could contribute to erosion?",
         "option1": "Plants slow the runoff of water and soil.",
         "option2": "Plant roots grow in rocks, breaking the rocks.",
