@@ -9,12 +9,16 @@ let question_i = -1
 let question: any = null
 let initial_user_decision: number = -1
 let final_user_decision: number = -1
+let initial_user_confidence: number = -1
+let final_user_confidence: number = -1
 let balance = 0
 let user_trust: number
 let bet_val_ratio: number = 1
 let time_question_start: number
 let time_final_decision_start: number
 let time_trust_decision_start: number
+let time_initial_confidence_start: number
+let time_final_confidence_start: number
 let instruction_i: number = 0
 let count_exited_page: number = 0
 
@@ -61,12 +65,16 @@ $("#button_next").on("click", () => {
             "user_trust_val": user_trust,
             "initial_user_decision": initial_user_decision,
             "final_user_decision": final_user_decision,
+            "initial_user_confidence": initial_user_confidence,
+            "final_user_confidence": final_user_confidence,
         }
 
         logged_data['times'] = {
-            "initial_decision": time_final_decision_start - time_question_start,
-            "final_decision": time_trust_decision_start - time_final_decision_start,
-            "user_trust": Date.now() - time_trust_decision_start,
+            "initial_decision": time_initial_confidence_start - time_question_start,
+            "initial_confidence": time_final_decision_start - time_initial_confidence_start,
+            "final_decision": time_final_confidence_start - time_final_decision_start,
+            "final_confidence": time_trust_decision_start - time_final_confidence_start,
+            "trust_decision": Date.now() - time_trust_decision_start,
         }
         logged_data['question'] = question
         logged_data['count_exited_page'] = count_exited_page
@@ -89,7 +97,7 @@ $('#range_val').on('input change', function () {
 });
 
 function make_initial_user_decision(option) {
-    time_final_decision_start = Date.now()
+    time_initial_confidence_start = Date.now()
     initial_user_decision = option
     assert(option == 1 || option == 2, "Invalid option!")
     if (option == 1) {
@@ -99,20 +107,48 @@ function make_initial_user_decision(option) {
         $("#button_initial_decision_option1").removeAttr("activedecision")
         $("#button_initial_decision_option2").attr("activedecision", "true")
     }
-    $("#ai_assistance_div").show()
-    $("#final_user_decision_div").show()
+    $("#initial_user_confidence_div").show()
     $("#button_initial_decision_option1").attr("disabled", "true")
     $("#button_initial_decision_option2").attr("disabled", "true")
-    $("#button_final_decision_option1").removeAttr("disabled")
-    $("#button_final_decision_option2").removeAttr("disabled")
-
+    $("#button_initial_confidence_option1").removeAttr("disabled")
+    $("#button_initial_confidence_option2").removeAttr("disabled")
+    $("#button_initial_confidence_option3").removeAttr("disabled")
 }
-
 $("#button_initial_decision_option1").on("click", () => make_initial_user_decision(1))
 $("#button_initial_decision_option2").on("click", () => make_initial_user_decision(2))
 
+function get_initial_user_confidence(conf_level) {
+    time_final_decision_start = Date.now()
+    initial_user_confidence = conf_level
+    assert(conf_level == 1 || conf_level == 2 || conf_level == 3, "Invalid option!")
+    if (conf_level == 1) {
+        $("#button_initial_confidence_option1").attr("activedecision", "true")
+        $("#button_initial_confidence_option2").removeAttr("activedecision")
+        $("#button_initial_confidence_option3").removeAttr("activedecision")
+    } else if (conf_level == 2) {
+        $("#button_initial_confidence_option1").removeAttr("activedecision")
+        $("#button_initial_confidence_option2").attr("activedecision", "true")
+        $("#button_initial_confidence_option3").removeAttr("activedecision")
+    } else {
+        $("#button_initial_confidence_option1").removeAttr("activedecision")
+        $("#button_initial_confidence_option2").removeAttr("activedecision")
+        $("#button_initial_confidence_option3").attr("activedecision", "true")
+    }
+
+    $("#ai_assistance_div").show()
+    $("#final_user_decision_div").show()
+    $("#button_initial_confidence_option1").attr("disabled", "true")
+    $("#button_initial_confidence_option2").attr("disabled", "true")
+    $("#button_initial_confidence_option3").attr("disabled", "true")
+    $("#button_final_decision_option1").removeAttr("disabled")
+    $("#button_final_decision_option2").removeAttr("disabled")    
+}
+$("#button_initial_confidence_option1").on("click", () => get_initial_user_confidence(1))
+$("#button_initial_confidence_option2").on("click", () => get_initial_user_confidence(2))
+$("#button_initial_confidence_option3").on("click", () => get_initial_user_confidence(3))
+
 function make_final_user_decision(option) {
-    time_trust_decision_start = Date.now()
+    time_final_confidence_start = Date.now()
     final_user_decision = option
     assert(option == 1 || option == 2, "Invalid option!")
     if (option == 1) {
@@ -122,13 +158,43 @@ function make_final_user_decision(option) {
         $("#button_final_decision_option1").removeAttr("activedecision")
         $("#button_final_decision_option2").attr("activedecision", "true")
     }
+    $("#final_user_confidence_div").show()
     $("#button_final_decision_option1").attr("disabled", "true")
     $("#button_final_decision_option2").attr("disabled", "true")
-    show_result()
+    $("#button_final_confidence_option1").removeAttr("disabled")
+    $("#button_final_confidence_option2").removeAttr("disabled")
+    $("#button_final_confidence_option3").removeAttr("disabled")
 }
-
 $("#button_final_decision_option1").on("click", () => make_final_user_decision(1))
 $("#button_final_decision_option2").on("click", () => make_final_user_decision(2))
+
+function get_final_user_confidence(conf_level) {
+    time_trust_decision_start = Date.now()
+    final_user_confidence = conf_level
+    assert(conf_level == 1 || conf_level == 2 || conf_level == 3, "Invalid option!")
+    if (conf_level == 1) {
+        $("#button_final_confidence_option1").attr("activedecision", "true")
+        $("#button_final_confidence_option2").removeAttr("activedecision")
+        $("#button_final_confidence_option3").removeAttr("activedecision")
+    } else if (conf_level == 2) {
+        $("#button_final_confidence_option1").removeAttr("activedecision")
+        $("#button_final_confidence_option2").attr("activedecision", "true")
+        $("#button_final_confidence_option3").removeAttr("activedecision")
+    } else {
+        $("#button_final_confidence_option1").removeAttr("activedecision")
+        $("#button_final_confidence_option2").removeAttr("activedecision")
+        $("#button_final_confidence_option3").attr("activedecision", "true")
+    }
+
+    $("#button_final_confidence_option1").attr("disabled", "true")
+    $("#button_final_confidence_option2").attr("disabled", "true")
+    $("#button_final_confidence_option3").attr("disabled", "true")
+    show_result()
+}
+$("#button_final_confidence_option1").on("click", () => get_final_user_confidence(1))
+$("#button_final_confidence_option2").on("click", () => get_final_user_confidence(2))
+$("#button_final_confidence_option3").on("click", () => get_final_user_confidence(3))
+
 
 function show_result() {
 
@@ -184,12 +250,30 @@ function next_question() {
     $("#button_initial_decision_option2").removeAttr("activedecision")
     $("#button_initial_decision_option1").removeAttr("disabled")
     $("#button_initial_decision_option2").removeAttr("disabled")
+
+    $("#button_initial_confidence_option1").removeAttr("activedecision")
+    $("#button_initial_confidence_option2").removeAttr("activedecision")
+    $("#button_initial_confidence_option3").removeAttr("activedecision")
+    $("#button_initial_confidence_option1").removeAttr("disabled")
+    $("#button_initial_confidence_option2").removeAttr("disabled")
+    $("#button_initial_confidence_option3").removeAttr("disabled")
+
     $("#button_final_decision_option1").removeAttr("activedecision")
     $("#button_final_decision_option2").removeAttr("activedecision")
     $("#button_final_decision_option1").removeAttr("disabled")
     $("#button_final_decision_option2").removeAttr("disabled")
+
+    $("#button_final_confidence_option1").removeAttr("activedecision")
+    $("#button_final_confidence_option2").removeAttr("activedecision")
+    $("#button_final_confidence_option3").removeAttr("activedecision")
+    $("#button_final_confidence_option1").removeAttr("disabled")
+    $("#button_final_confidence_option2").removeAttr("disabled")
+    $("#button_final_confidence_option3").removeAttr("disabled")
+
     $("#ai_assistance_div").hide()
+    $("#initial_user_confidence_div").hide()
     $("#final_user_decision_div").hide()
+    $("#final_user_confidence_div").hide()
     $('#range_val').removeAttr("disabled")
     $("#how_confident_div").hide()
     $("#button_place_bet").hide()
@@ -290,7 +374,9 @@ document.onvisibilitychange = () => {
     if (!alert_active) {
         count_exited_page += 1
         alert_active = true
-        alert("Please don't leave the page. If you do so again, we may restrict paying you.")
+        if (!(globalThis.uid!.startsWith("demo"))) {
+            alert("Please don't leave the page. If you do so again, we may restrict paying you.")
+        }
         alert_active = false
     }
 }

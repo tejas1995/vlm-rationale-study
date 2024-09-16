@@ -60,17 +60,18 @@
             <div id="instructions_0">Welcome to our user study. You will be trying to answer questions with the assistance of an AI system. We will first walk you through an example question with
                 images and afterwards you will annotate 30 examples.</div>
             <div id="instructions_1">
-                Each example consists of a <b>question</b> and <b>two options</b>.
+                Each example consists of a <b>question</b> and <b>two options</b>. The question will involve scientific knowledge.
 
                 <img src="img/instructions_1.png">
             </div>
             <div id="instructions_2">
-                In the first step, you must select the option you think is correct, based on your own knowledge.
+                In the first step, you must select the option you think is correct, based on your own knowledge. You must also mark your confidence in your answer.
 
                 <img src="img/instructions_2.png">
             </div>
             <div id="instructions_3">
-                After your decision, you will be shown a predicted answer from an AI system, along with a confidence score. Based on the AI system's prediction and confidence, you must select the option that you now think is correct.
+                After your decision, you will be shown a predicted answer from an AI system, along with a confidence score (out of 100). <br>
+                Based on the AI system's prediction and confidence, you must select the option that you now think is correct, along with your confidence in the selected answer.
 
                 <img src="img/instructions_3.png">
             </div>
@@ -113,28 +114,41 @@
             <h3>Option 1: <span id="option1_span"></span></h3>
             <h3>Option 2: <span id="option2_span"></span></h3>
             <div id="initial_user_decision_div">
-                <p style="font-size: 1.17em;">Which of the two options do you think is correct?</p>
+                <p style="font-size: 1.17em;">Which of the two options do you think is correct?
                 <input id="button_initial_decision_option1" type="button" class="button-neutral button-decision-option1" value="Option 1">
                 <input id="button_initial_decision_option2" type="button" class="button-neutral button-decision-option2" value="Option 2">
+                </p>
             </div>
-            
-            <br>
+            <div id="initial_user_confidence_div">
+                <p style="font-size: 1.17em;">How confident are you in your answer?
+                <input id="button_initial_confidence_option1" type="button" class="button-neutral button-confidence-option1" value="Not confident">
+                <input id="button_initial_confidence_option2" type="button" class="button-neutral button-confidence-option2" value="Somewhat confident">
+                <input id="button_initial_confidence_option3" type="button" class="button-neutral button-confidence-option3" value="Very confident">
+                </p>
+            </div>
             
             <div id="ai_assistance_div">
                 <h3>AI Prediction: <span id="ai_prediction_span"></span></h3>
                 <h3>AI Confidence: <span id="ai_confidence_span">72%</span></h3>
             </div>
             <div id="final_user_decision_div">
-                <p style="font-size: 1.17em;">After looking at the AI prediction and confidence, what do you think is the correct option? </p>
+                <p style="font-size: 1.17em;">After looking at the AI prediction and confidence, what do you think is the correct option?
                 <input id="button_final_decision_option1" type="button" class="button-neutral button-decision-option1" value="Option 1">
                 <input id="button_final_decision_option2" type="button" class="button-neutral button-decision-option2" value="Option 2">
+                </p>
             </div>
-            <br>
+            <div id="final_user_confidence_div">
+                <p style="font-size: 1.17em;">How confident are you in your answer?
+                <input id="button_final_confidence_option1" type="button" class="button-neutral button-confidence-option1" value="Not confident">
+                <input id="button_final_confidence_option2" type="button" class="button-neutral button-confidence-option2" value="Somewhat confident">
+                <input id="button_final_confidence_option3" type="button" class="button-neutral button-confidence-option3" value="Very confident">
+                </p>
+            </div>
             
             <p style="font-size: 1.17em;" id="result_span"></p>
             
             <div id="how_confident_div">
-                <h3>Based on all your interactions, how much do you trust the AI to help you with this task?</h3>
+                <h3>Based on your interactions with the AI so far, how much do you trust the AI to help you with this task?</h3>
                 <input id="range_val" type="range" min="0" max="10">
                 <label id="range_text">-</label>
             </div>

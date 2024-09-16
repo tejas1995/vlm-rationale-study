@@ -11,7 +11,7 @@ body {
     background-color: white;
     border: 2px solid #1A1A1A;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     width: 100%;
     min-height: 450px;
 }
@@ -56,7 +56,7 @@ input[type="button"] {
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
-    padding: 8px 12px;
+    padding: 6px 6px;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
     user-select: none;
     -webkit-user-select: none;
@@ -76,6 +76,24 @@ input[type="button"]:hover:not([disabled]) {
 
 .button-decision-option2:hover:not([disabled]),
 .button-decision-option2[activedecision="true"] {
+    color: #fff;
+    background-color: #4c2de7;
+}
+
+.button-confidence-option1:hover:not([disabled]),
+.button-confidence-option1[activedecision="true"] {
+    color: #fff;
+    background-color: #4c2de7;
+}
+
+.button-confidence-option2:hover:not([disabled]),
+.button-confidence-option2[activedecision="true"] {
+    color: #fff;
+    background-color: #4c2de7;
+}
+
+.button-confidence-option3:hover:not([disabled]),
+.button-confidence-option3[activedecision="true"] {
     color: #fff;
     background-color: #4c2de7;
 }
