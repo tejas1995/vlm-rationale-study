@@ -67,6 +67,27 @@ def decide_truthfulness_calibrated(question):
         "ai_is_correct": ai_is_correct,
     }
 
+def decide_truthfulness_calibrated_high_conf(question):
+    #ai_confidence = random.uniform(0.7, 0.95)
+    ai_confidence = 0.5*(1+np.random.beta(a=2, b=2))
+    ai_is_correct = random.choices([True, False], weights=[ai_confidence, 1 - ai_confidence], k=1)[0]
+    
+    options = [question["correct_option"], question["incorrect_option"]]
+    random.shuffle(options)
+    correct_option = options.index(question["correct_option"])+1
+    ai_prediction = correct_option if ai_is_correct else 3-correct_option
+
+    return {
+        "ai2arc_qid": question["ai2arc_qid"],
+        "question": question["question"],
+        "option1": options[0],
+        "option2": options[1],
+        "correct_option": correct_option,
+        "ai_prediction": ai_prediction,
+        "ai_confidence": f"{ai_confidence:.0%}",
+        "ai_is_correct": ai_is_correct,
+    }
+
 def decide_truthfulness_confidently_incorrect(question):
     ai_is_correct = random.choices([True, False], weights=[0.1, 0.9], k=1)[0]
     ai_confidence = random.uniform(0.75, 0.9)
@@ -156,6 +177,9 @@ QUEUE_PLAN = {
         30 * [decide_truthfulness_calibrated] +
         []
     ),
+    "calibrated_high_conf": (
+        30 * [decide_truthfulness_calibrated_high_conf] + []
+    ),
     #"always_confident": (
     #    60 * [decide_truthfulness_always_confident] +
     #    []
@@ -184,6 +208,7 @@ for uid in list(range(args.uid_count)):
         for question, decide_fn
         in zip(queue, QUEUE_PLAN[args.plan])
     ]
+    #print(f"Queue {uid}: Accuracy = {np.mean([q['ai_is_correct'] for q in queue])}")
     if type(uid) == int:
         uid = f"{uid:0>3}"
 
