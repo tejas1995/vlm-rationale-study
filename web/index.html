@@ -15,20 +15,17 @@
 </head>
 
 <body style='text-align: center; margin-top: 30px; margin-bottom: 20px;'>
-    <h2 style="margin-left: auto; margin-right: auto;">AI-Assisted Question Answering</h2>
+    <h2 style="margin-left: auto; margin-right: auto;">AI-Assisted Claim Verification</h2>
 
     <div style="text-align: left; width: 800px; margin-left: auto; margin-right: auto; margin-top: 30px">
 
         <div id="instructions_and_decorations">
             <div style="margin-top: 30px;  text-align: justify;">
                 <ul>
-                    <li>In this experiment, your task is to answer questions, with assistance from an AI system.</li>
-                    </li>
-                    <li>You will be shown a question, and two options. You must initially select the option you think is correct. </li>
-                    <li>You will then get to see what option the AI thinks is correct, along with a confidence score. Based on this new information, you can update the option that you think is correct.</li>
-                    <li>If your final answer is correct, you gain a reward of $0.10, otherwise you do not get a reward.</li>
-                    <li>Your payment is $1.0 plus whatever you accumulate during this experiment (therefore the
-                        guaranteed minimum is $1.0, with a potential bonus of $0.10 * 30 = $3.0).</li>
+                    <li style="margin: 10px 0;">In this experiment, your task is to answer whether a claim is true or not, with assistance from an AI system.</li>
+                    <li style="margin: 10px 0;">If your decision is correct, you gain a reward of $0.10, otherwise you do not get a reward. You will see your total reward at the end of the experiment. Your payment is $1.0 plus whatever you accumulate during this experiment.</li>
+                    <li style="margin: 10px 0;">To help you make your decision, you will see the AI's prediction about the claim's veracity, along with a confidence score. You can also access an explanation from the AI, or manually examine the sources that the AI based its prediction on, by clicking the respective drop-down buttons. These additional decision aids may help you make your decision more confidently, but they will increase the time you spend on the task.</li>
+                    <li style="margin: 10px 0;">The experiment will have you verify 50 claims in total. If you wish to quit the study early (after a minimum of 20 questions), you can press the "End study" button, which will take you to the exit page, and a Google Form for an exit questionnaire. </li>
                 </ul>
 
             </div>
@@ -36,66 +33,77 @@
             <br>
             <div style="text-align: right; height: 20px; margin-left: -30px">
                 <div id="progress" style="width: 150px; float: left;">(-/-)</div>
-                <div id="balance" style="width: 200px; float: right;">Balance: $0+$1.0</div>
+                <!--<div id="balance" style="width: 200px; float: right;">Balance: $0+$1.0</div>-->
             </div>
         </div>
 
-
+        
         <div class="main_box" id="main_box_end" style="display: none">
             Thank you for participation in our study.
+            <div id="reward_box" style="display: none">
+                Your total reward is $0.00 (0 questions answered).
+            </div>
             Please navigate <a href="https://app.prolific.com/submissions/complete?cc=C18F0V8M"
                 style="color: black; font-weight: bold;">to Prolific</a> or with the code <b>C18F0V8M</b>.
         </div>
 
         <div class="main_box" id="main_box_end_mock" style="display: none">
             Thank you for testing out our study.
-            Note that your data has <em>not</em> been logged.
-            Please contact the authors with any questions.
+            <div id="reward_box_mock" style="display: none">
+                Your total reward is $0.00 (0 questions answered).
+            </div>
+            Please complete the <a href="https://forms.gle/yvu96soZZ18P9ePY9"
+            style="color: black; font-weight: bold;">exit questionnaire</a> for providing feedback on the user study.
         </div>
 
         <div class="main_box" id="main_box_instructions" style="display: none">
             <input id="button_instructions_prev" type="button" value="Previous">
             <input id="button_instructions_next" type="button" value="Next" style="margin-bottom: 10px">
 
-            <div id="instructions_0">Welcome to our user study. You will be trying to answer questions with the assistance of an AI system. We will first walk you through an example question with
-                images and afterwards you will annotate 30 examples.</div>
+            <div id="instructions_0">Welcome to our user study. In this experiment, your task is to answer whether a claim is true or not, with assistance from an AI system. We will first walk you through an example question with
+                images and afterwards you will annotate upto 50 examples.
+            </div>
             <div id="instructions_1">
-                Each example consists of a <b>question</b> and <b>two options</b>. The question will involve scientific knowledge.
-
+                You will be shown a claim, which may or may not be correct. Your job is to decide if the claim is true or not. If your decision is correct, you gain a reward of $0.10,otherwise you do not get a reward.
                 <img src="img/instructions_1.png">
             </div>
             <div id="instructions_2">
-                In the first step, you must select the option you think is correct, based on your own knowledge. You must also mark your confidence in your answer.
-
+                To help you make your decision, you will also get to see whether an AI thinks the claim is true or not, along with a confidence score.
                 <img src="img/instructions_2.png">
             </div>
             <div id="instructions_3">
-                After your decision, you will be shown a predicted answer from an AI system, along with a confidence score (out of 100). <br>
-                Based on the AI system's prediction and confidence, you must select the option that you now think is correct, along with your confidence in the selected answer.
-
+                <ul>
+                    <li style="margin: 10px 0;">You will also have the option to access an explanation from the AI, and manually examine the sources that the AI based its prediction on.</li>
+                    <li style="margin: 10px 0;">You can access the explanation/sources by clicking the respective drop-down buttons.</li>
+                    <li style="margin: 10px 0;"><b>Once you select either of the "The claim is true/false" options, you will not be able to access the explanation/sources anymore!</b></li>
+                </ul>
+                
                 <img src="img/instructions_3.png">
             </div>
             <div id="instructions_4">
-                You will then get to see if your final answer and the AI system's prediction were correct or not. <br> 
-                If your final answer was correct, you will receive a reward of $0.10. If your final selection was incorrect, you will not receive a reward. <br>
-                The guaranteed minimum is $1.0 regardless of your performance, but you can earn more money if your answers are correct (the additional money will be paid out as bonuses on Prolific).
+                <ul>
+                    <li style="margin: 10px 0;">The explanation is a short passage generated by the AI, summarizing its reasoning behind its prediction.</li>
+                    <li style="margin: 10px 0;">The sources are a set of passages that the AI examined to come to its prediction (some of which may not actually be relevant to verifying the claim).</li> 
+                    <li style="margin: 10px 0;">Examining the explanation/sources yourself may help you make your decision more confidently, but they will increase the time you spend on the task.</li> 
+                    <li style="margin: 10px 0;"><b>Accessing the explanation/sources is purely optional, you should do so if you are fine spending a bit more time to make a more confident decision.</b></li>
+                </ul>
                 <br>
                 <img src="img/instructions_4.png">
             </div>
             <div id="instructions_5">
-                Finally, you will decide how much you trust the AI to help you with this task, on a scale from 0 to 100. <br>
-                This trust will be based on the interactions you have had with the AI system so far. <br>
-                After selecting a trust level, you can move on to the next question.
+                <ul>
+                    <li style="margin: 10px 0;">If your final decision is correct, you will receive a reward of $0.10. However, you will not get to see if your decision was correct or not, your cumulative reward will only be revealed to you at the end of the experiment.</li>
+                    <li style="margin: 10px 0;">The experiment will have you verify 50 claims in total. If you wish to quit the study early (after a minimum of 20 questions), you can press the "End study" button, which will take you to the exit page, and a Google Form for an exit questionnaire.</li>
+                </ul>
                 <br>
                 <img src="img/instructions_5.png">
             </div>
             <div id="instructions_6">
                  <!-- For this annotation experiment we are looking
                 at trivia and math questions. Note that the system performance may differ across question types. -->
-                <span class='color_incorrect'><b>You are not permitted to leave this tab</b></span> for the duration of the experiment. This will be
-                monitored and violation of this can result in your submission being rejected.
+                <span class='color_incorrect'><b>You are not permitted to leave this tab</b></span> for the duration of the experiment. This will be monitored and violation of this can result in your submission being rejected.
                 <span class='color_incorrect'><b>Do not use other external tools to help you with the answer</b></span>: rely solely on your own knowledge and the AI in this study. 
-                The average time of the experiment is 5--10 minutes.
+                The average time of the experiment is 15--20 minutes.
                 <br><br>
                 You will not be paid if you already participated in this study before.
                 <br><br>
@@ -109,51 +117,87 @@
         </div>
 
         <div class="main_box" id="main_box_experiment" style="display: none">
-            <h3>Question: <span id="question_span"></span></h3>
-            <h3>Option 1: <span id="option1_span"></span></h3>
-            <h3>Option 2: <span id="option2_span"></span></h3>
-            <div id="initial_user_decision_div">
-                <p style="font-size: 1.17em;">Which of the two options do you think is correct?
-                <input id="button_initial_decision_option1" type="button" class="button-neutral button-decision-option1" value="Option 1">
-                <input id="button_initial_decision_option2" type="button" class="button-neutral button-decision-option2" value="Option 2">
+            <h3>Claim: <span id="claim_span"></span></h3>
+            <div id="user_decision_div">
+                <p style="font-size: 1.17em;">Do you think the claim is true or not?
+                <input id="button_user_decision_claimtrue" type="button" class="button-neutral button-decision" value="The claim is true.">
+                <input id="button_user_decision_claimfalse" type="button" class="button-neutral button-decision" value="The claim is false.">
                 </p>
             </div>
-            <div id="initial_user_confidence_div">
-                <p style="font-size: 1.17em;">How confident are you in your answer?
-                <input id="button_initial_confidence_option1" type="button" class="button-neutral button-confidence-option1" value="Not confident">
-                <input id="button_initial_confidence_option2" type="button" class="button-neutral button-confidence-option2" value="Somewhat confident">
-                <input id="button_initial_confidence_option3" type="button" class="button-neutral button-confidence-option3" value="Very confident">
-                </p>
-            </div>
-            
+
+
             <div id="ai_assistance_div">
                 <h3>AI Prediction: <span id="ai_prediction_span"></span></h3>
                 <h3>AI Confidence: <span id="ai_confidence_span">72%</span></h3>
             </div>
-            <div id="final_user_decision_div">
-                <p style="font-size: 1.17em;">After looking at the AI prediction and confidence, what do you think is the correct option?
-                <input id="button_final_decision_option1" type="button" class="button-neutral button-decision-option1" value="Option 1">
-                <input id="button_final_decision_option2" type="button" class="button-neutral button-decision-option2" value="Option 2">
+            <br>
+            <div id="ai_explanation_div">
+                <!--<button class="dropbtn" id="ai_explanation_dropbtn">Wish to Get An Explanation from the AI?</button> -->
+                <p class="titlebar" id="ai_explanation_titlebar">
+                    <i class="arrow right" id="ai_explanation_dropbtn"></i>
+                    <b>  Wish to Get An Explanation from the AI?</b>
+                </p>
+                <p id="ai_explanation_dropdown">
+                    <b>Explanation: </b><span id="ai_explanation_span">The AI system thinks that the answer is correct because...</span>
                 </p>
             </div>
-            <div id="final_user_confidence_div">
-                <p style="font-size: 1.17em;">How confident are you in your answer?
-                <input id="button_final_confidence_option1" type="button" class="button-neutral button-confidence-option1" value="Not confident">
-                <input id="button_final_confidence_option2" type="button" class="button-neutral button-confidence-option2" value="Somewhat confident">
-                <input id="button_final_confidence_option3" type="button" class="button-neutral button-confidence-option3" value="Very confident">
+
+            <br>
+            <div id="view_sources_div">
+                <p class="titlebar" id="view_sources_titlebar">
+                    <i class="arrow right" id="view_sources_dropbtn"></i>
+                    <b>  Wish to Examine the AI's Sources Yourself?</b>
                 </p>
+                <div id="all_sources_div">
+                    <div id="source_0_div" class="source_div">
+                        <p class="source_titlebar" id="source_0_titlebar"><i class="arrow right" id="source_0_dropbtn"></i><b>  Look at Source 1</b></p>
+                        <p id="source_0_span" class="source_span">Source 1</p>
+                    </div>
+                    <div id="source_1_div" class="source_div">
+                        <p class="source_titlebar" id="source_1_titlebar"><i class="arrow right" id="source_1_dropbtn"></i><b>  Look at Source 2</b></p>
+                        <p id="source_1_span" class="source_span">Source 2</p>
+                    </div>
+                    <div id="source_2_div" class="source_div">
+                        <p class="source_titlebar" id="source_2_titlebar"><i class="arrow right" id="source_2_dropbtn"></i><b>  Look at Source 3</b></p>
+                        <p id="source_2_span" class="source_span">Source 3</p>
+                    </div>
+                    <div id="source_3_div" class="source_div">
+                        <p class="source_titlebar" id="source_3_titlebar"><i class="arrow right" id="source_3_dropbtn"></i><b>  Look at Source 4</b></p>
+                        <p id="source_3_span" class="source_span">Source 4</p>
+                    </div>
+                    <div id="source_4_div" class="source_div">
+                        <p class="source_titlebar" id="source_4_titlebar"><i class="arrow right" id="source_4_dropbtn"></i><b>  Look at Source 5</b></p>
+                        <p id="source_4_span" class="source_span">Source 5</p>
+                    </div>
+                    <div id="source_5_div" class="source_div">
+                        <p class="source_titlebar" id="source_5_titlebar"><i class="arrow right" id="source_5_dropbtn"></i><b>  Look at Source 6</b></p>
+                        <p id="source_5_span" class="source_span">Source 6</p>
+                    </div>
+                    <div id="source_6_div" class="source_div">
+                        <p class="source_titlebar" id="source_6_titlebar"><i class="arrow right" id="source_6_dropbtn"></i><b>  Look at Source 7</b></p>
+                        <p id="source_6_span" class="source_span">Source 7</p>
+                    </div>
+                    <div id="source_7_div" class="source_div">
+                        <p class="source_titlebar" id="source_7_titlebar"><i class="arrow right" id="source_7_dropbtn"></i><b>  Look at Source 8</b></p>
+                        <p id="source_7_span" class="source_span">Source 8</p>
+                    </div>
+                    <div id="source_8_div" class="source_div">
+                        <p class="source_titlebar" id="source_8_titlebar"><i class="arrow right" id="source_8_dropbtn"></i><b>  Look at Source 9</b></p>
+                        <p id="source_8_span" class="source_span">Source 9</p>
+                    </div>
+                    <div id="source_9_div" class="source_div">
+                        <p class="source_titlebar" id="source_9_titlebar"><i class="arrow right" id="source_9_dropbtn"></i><b>  Look at Source 10</b></p>
+                        <p id="source_9_span" class="source_span">Source 10</p>
+                    </div>
+                    
+                </div>
             </div>
             
             <p style="font-size: 1.17em;" id="result_span"></p>
             
-            <div id="how_confident_div">
-                <h3>Based on your interactions with the AI so far, how much do you trust the AI to help you with this task?</h3>
-                <input id="range_val" type="range" min="0" max="10">
-                <label id="range_text">-</label>
-            </div>
-            
             <!-- <input id="button_place_bet" type="button" class="button-neutral" value="See the result"> -->
             <input id="button_next" type="button" class="button-neutral" value="Next question">
+            <input id="button_quit" type="button" class="button-neutral" value="End study">
         </div>
         <br>
         <!-- Research project by Tejas Srinivasan at the University of Southern California. -->

@@ -3,6 +3,10 @@ import { MOCKMODE } from './main'
 
 let SERVER_LOG_ROOT = DEVMODE ? "http://127.0.0.1:5000/" : "https://tejassrinivasan.pythonanywhere.com/"
 
+async function sleep(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export async function load_data(): Promise<any> {
     // include timestamp so that things don't get cached
     let result = await $.getJSON(
@@ -11,10 +15,10 @@ export async function load_data(): Promise<any> {
     return result
 }
 export async function log_data(data): Promise<any> {
-    if (MOCKMODE) {
-        console.log("logged (mock)", data)
-        return
-    }
+    //if (MOCKMODE) {
+    //    console.log("logged (mock)", data)
+    //    return
+    //}
     
     data["url_data"] = globalThis.url_data
     console.log("Data")
@@ -30,7 +34,7 @@ export async function log_data(data): Promise<any> {
             SERVER_LOG_ROOT + "log",
             {
                 data: JSON.stringify({
-                    project: "2step-trust-study/"+data['url_data']['study_id'],
+                    project: "llm-trust-study/"+data['url_data']['study_id'],
                     uid: globalThis.uid+"_"+data['url_data']['prolific_id'],
                     payload: JSON.stringify(data),
                 }),
@@ -38,6 +42,7 @@ export async function log_data(data): Promise<any> {
                 contentType: 'application/json',
             }
         )
+        await sleep(2000);
         return result
     } catch (e) {
         console.log(e)
