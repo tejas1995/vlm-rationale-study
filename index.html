@@ -75,6 +75,7 @@
                 <ul>
                     <li style="margin: 10px 0;">You will also have the option to access an explanation from the AI, and manually examine the sources that the AI based its prediction on.</li>
                     <li style="margin: 10px 0;">You can access the explanation/sources by clicking the respective drop-down buttons.</li>
+                    <li style="margin: 10px 0;"><b>Once you select either of the "The claim is true/false" options, you will not be able to access the explanation/sources anymore!</b></li>
                 </ul>
                 
                 <img src="img/instructions_3.png">
@@ -117,6 +118,14 @@
 
         <div class="main_box" id="main_box_experiment" style="display: none">
             <h3>Claim: <span id="claim_span"></span></h3>
+            <div id="user_decision_div">
+                <p style="font-size: 1.17em;">Do you think the claim is true or not?
+                <input id="button_user_decision_claimtrue" type="button" class="button-neutral button-decision" value="The claim is true.">
+                <input id="button_user_decision_claimfalse" type="button" class="button-neutral button-decision" value="The claim is false.">
+                </p>
+            </div>
+
+
             <div id="ai_assistance_div">
                 <h3>AI Prediction: <span id="ai_prediction_span"></span></h3>
                 <h3>AI Confidence: <span id="ai_confidence_span">72%</span></h3>
@@ -183,14 +192,6 @@
                     
                 </div>
             </div>
-
-            <div id="user_decision_div">
-                <p style="font-size: 1.17em;">Do you think the claim is true or not?
-                <input id="button_user_decision_claimtrue" type="button" class="button-neutral button-decision" value="The claim is true.">
-                <input id="button_user_decision_claimfalse" type="button" class="button-neutral button-decision" value="The claim is false.">
-                </p>
-            </div>
-
             
             <p style="font-size: 1.17em;" id="result_span"></p>
             
