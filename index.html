@@ -52,7 +52,7 @@
             <div id="reward_box_mock" style="display: none">
                 Your total reward is $0.00 (0 questions answered).
             </div>
-            Please complete the <a href="https://forms.gle/yvu96soZZ18P9ePY9"
+            Please complete the <a href="https://forms.gle/yvu96soZZ18P9ePY9" target="_blank"
             style="color: black; font-weight: bold;">exit questionnaire</a> for providing feedback on the user study.
         </div>
 
@@ -68,7 +68,7 @@
                 <img src="img/instructions_1.png">
             </div>
             <div id="instructions_2">
-                To help you make your decision, you will also get to see whether an AI thinks the claim is true or not, along with a confidence score.
+                To help you make your decision, you will be assisted by an AI. The AI works by extracting a few source passages from online, and aggregating the evidence it finds from the different passages. Based on this evidence, the AI will tell you if it thinks the claim is true or not, along with a confidence score between 0% and 100%.
                 <img src="img/instructions_2.png">
             </div>
             <div id="instructions_3">
@@ -127,8 +127,7 @@
 
 
             <div id="ai_assistance_div">
-                <h3>AI Prediction: <span id="ai_prediction_span"></span></h3>
-                <h3>AI Confidence: <span id="ai_confidence_span">72%</span></h3>
+                <h3 style="font-weight: normal;">The AI thinks <span id="ai_prediction_span"></span> (confidence: <span id="ai_confidence_span">72%</span>).</h3>
             </div>
             <br>
             <div id="ai_explanation_div">

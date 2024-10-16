@@ -8,7 +8,7 @@ body {
 }
 
 .main_box {
-    background-color: white;
+    background-color: white; 
     border: 2px solid #1A1A1A;
     border-radius: 10px;
     padding: 10px;
@@ -35,8 +35,8 @@ body {
 
 #claim_span,
 #ai_prediction_span,
-#confidence_span {
-    font-weight: normal;
+#ai_confidence_span {
+    font-weight: bold;
 }
 
 #range_text {
@@ -206,8 +206,8 @@ input[type="button"]:hover:not([disabled]) {
 }
   
 .down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg) translate(30px);
+    -webkit-transform: rotate(45deg) translate(-5px, 2px);
 }
 
 .vanish {
