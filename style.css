@@ -33,10 +33,12 @@ body {
 }
 
 
-#claim_span,
+#question_span,
 #ai_prediction_span,
-#ai_confidence_span {
-    font-weight: bold;
+#ai_explanation_span,
+explanation_fidelity_span,
+explanation_contrastiveness_span {
+    font-weight: normal;
 }
 
 #range_text {
@@ -76,16 +78,34 @@ input[type="button"]:hover:not([disabled]) {
     background-color: #000000;
 }
 
-#button_user_decision_claimtrue:hover:not([disabled]),
-#button_user_decision_claimtrue[activedecision="true"] {
+#button_answeronly_usertrusts:hover:not([disabled]),
+#button_answeronly_usertrusts[activedecision="true"],
+#button_withexplanation_usertrusts:hover:not([disabled]),
+#button_withexplanation_usertrusts[activedecision="true"],
+#button_withexplanationquality_usertrusts:hover:not([disabled]),
+#button_withexplanationquality_usertrusts[activedecision="true"] {
     color: #fff;
     background-color: #347e32;
 }
 
-#button_user_decision_claimfalse:hover:not([disabled]),
-#button_user_decision_claimfalse[activedecision="true"] {
+#button_answeronly_userdistrusts:hover:not([disabled]),
+#button_answeronly_userdistrusts[activedecision="true"],
+#button_withexplanation_userdistrusts:hover:not([disabled]),
+#button_withexplanation_userdistrusts[activedecision="true"],
+#button_withexplanationquality_userdistrusts:hover:not([disabled]),
+#button_withexplanationquality_userdistrusts[activedecision="true"]  {
     color: #fff;
     background-color: #e63232;
+}
+
+#button_answeronly_userunsure:hover:not([disabled]),
+#button_answeronly_userunsure[activedecision="true"],
+#button_withexplanation_userunsure:hover:not([disabled]),
+#button_withexplanation_userunsure[activedecision="true"],
+#button_withexplanationquality_userunsure:hover:not([disabled]),
+#button_withexplanationquality_userunsure[activedecision="true"]  {
+    color: #fff;
+    background-color: #4c2de7;
 }
 
 .color_correct {
@@ -127,11 +147,6 @@ input[type="button"]:hover:not([disabled]) {
     background-color: #4c2de7;
 }
 
-#ai_explanation_div {
-    border: 2px solid #1A1A1A;
-    border-radius: 10px;
-    margin: 0 0 0 0;
-}
 
 
 #ai_explanation_titlebar {

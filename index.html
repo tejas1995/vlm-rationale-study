@@ -15,16 +15,16 @@
 </head>
 
 <body style='text-align: center; margin-top: 30px; margin-bottom: 20px;'>
-    <h2 style="margin-left: auto; margin-right: auto;">AI-Assisted Claim Verification</h2>
+    <h2 style="margin-left: auto; margin-right: auto;">Do You Trust My Explanation?</h2>
 
     <div style="text-align: left; width: 800px; margin-left: auto; margin-right: auto; margin-top: 30px">
 
         <div id="instructions_and_decorations">
             <div style="margin-top: 30px;  text-align: justify;">
                 <ul>
-                    <li style="margin: 10px 0;">In this experiment, your task is to answer whether a claim is true or not, with assistance from an AI system.</li>
+                    <li style="margin: 10px 0;"> In this experiment, you are working with an AI that is answering questions about images. You cannot see the image, you can only see the AI's answer. Your task is to decide if you trust the AI's answer or not.</li>
                     <li style="margin: 10px 0;">If your decision is correct, you gain a reward of $0.10. You will see your total reward at the end of the experiment. Your payment is $2.0 plus whatever you accumulate during this experiment.</li>
-                    <li style="margin: 10px 0;">To help you make your decision, you will see the AI's prediction about the claim's veracity, along with a confidence score. You can optionally also view an explanation from the AI, or manually examine the sources that the AI based its prediction on, by clicking the respective drop-down buttons. These additional decision aids may help you make your decision more confidently, but they will increase the time you spend on the task.</li>
+                    <li style="margin: 10px 0;">To help you make your decision, you will see the AI's answer, along with an explanation, and some information about how reliable the explanation is. After getting each piece of additional information, you will be asked whether you think the AI is correct or not.</li>
                 </ul>
 
             </div>
@@ -59,8 +59,7 @@
             <input id="button_instructions_prev" type="button" value="Previous">
             <input id="button_instructions_next" type="button" value="Next" style="margin-bottom: 10px">
 
-            <div id="instructions_0">Welcome to our user study. In this experiment, your task is to answer whether a claim is true or not, with assistance from an AI system. We will first walk you through an example question with
-                images, and afterwards you will answer upto 20 questions.
+            <div id="instructions_0">Welcome to our user study. In this experiment, you are working with an AI that is answering questions about images. You cannot see the image, you can only see the AI's answer. Your task is to decide if you trust the AI's answer or not.
             </div>
             <div id="instructions_1">
                 You will be shown a claim, which may or may not be correct. Your job is to decide if the claim is true or not. If your decision is correct, you gain a reward of $0.10, otherwise you do not get a reward.
@@ -116,83 +115,52 @@
         </div>
 
         <div class="main_box" id="main_box_experiment" style="display: none">
-            <h3>Claim: <span id="claim_span"></span></h3>
+            <p style="font-weight: bold; font-size: 18px">Question: <span id="question_span"></span></p>
 
 
-            <div id="ai_assistance_div">
-                <h3 style="font-weight: normal;">The AI thinks <span id="ai_prediction_span"></span> (confidence: <span id="ai_confidence_span">72%</span>).</h3>
+            <div id="ai_answer_div">
+                <p style="font-weight: bold; font-size: 18px">The AI thinks the answer is: <span id="ai_prediction_span"></span.</p>
+                <div id="answeronly_decision_div">
+                    <input id="button_answeronly_usertrusts" type="button" class="button-neutral button-decision" value="The AI's answer is correct.">
+                    <input id="button_answeronly_userdistrusts" type="button" class="button-neutral button-decision" value="The AI's answer is incorrect.">
+                    <input id="button_answeronly_userunsure" type="button" class="button-neutral button-decision" value="I am unsure and would like more info.">
+                </div>        
             </div>
             <br>
+
             <div id="ai_explanation_div">
-                <!--<button class="dropbtn" id="ai_explanation_dropbtn">Wish to Get An Explanation from the AI?</button> -->
+                <!--<button class="dropbtn" id="ai_explanation_dropbtn">Wish to Get An Explanation from the AI?</button> 
                 <p class="titlebar" id="ai_explanation_titlebar">
                     <i class="arrow right" id="ai_explanation_dropbtn"></i>
                     <b>  Wish to Read An Explanation from the AI?</b>
+                </p> -->
+                <p style="font-weight: bold; font-size: 18px">AI's Explanation: 
+                    <span id="ai_explanation_span">The AI system thinks that the answer is correct because...</span>
                 </p>
-                <p id="ai_explanation_dropdown">
-                    <b>Explanation: </b><span id="ai_explanation_span">The AI system thinks that the answer is correct because...</span>
-                </p>
+                <div id="withexplanation_decision_div">
+                    <input id="button_withexplanation_usertrusts" type="button" class="button-neutral button-decision" value="The AI's answer is correct.">
+                    <input id="button_withexplanation_userdistrusts" type="button" class="button-neutral button-decision" value="The AI's answer is incorrect.">
+                    <input id="button_withexplanation_userunsure" type="button" class="button-neutral button-decision" value="I am unsure and would like more info.">
+                </div>        
+            </div>
+
+            <div id="ai_explanation_quality_div">
+                <!--<button class="dropbtn" id="ai_explanation_dropbtn">Wish to Get An Explanation from the AI?</button> 
+                <p class="titlebar" id="ai_explanation_titlebar">
+                    <i class="arrow right" id="ai_explanation_dropbtn"></i>
+                    <b>  Wish to Read An Explanation from the AI?</b>
+                </p> -->
+                <p style="font-weight: bold; font-size: 18px">AI Confidence that all the visual details in the explanation are correct: </b><span id="explanation_fidelity_span">xxx</span>
+                <br>
+                <b>AI Confidence that the other options are incorrect: </b><span id="explanation_contrastiveness_span">YYY</span>
+                <div id="withexplanation_decision_div">
+                    <input id="button_withexplanationquality_usertrusts" type="button" class="button-neutral button-decision" value="The AI's answer is correct.">
+                    <input id="button_withexplanationquality_userdistrusts" type="button" class="button-neutral button-decision" value="The AI's answer is incorrect.">
+                    <input id="button_withexplanationquality_userunsure" type="button" class="button-neutral button-decision" value="I am still unsure.">
+                </div>        
             </div>
 
             <br>
-            <div id="view_sources_div">
-                <p class="titlebar" id="view_sources_titlebar">
-                    <i class="arrow right" id="view_sources_dropbtn"></i>
-                    <b>  Wish to Examine the AI's Sources Yourself?</b>
-                </p>
-                <div id="all_sources_div">
-                    <div id="source_0_div" class="source_div">
-                        <p class="source_titlebar" id="source_0_titlebar"><i class="arrow right" id="source_0_dropbtn"></i><b>  Look at Source 1</b></p>
-                        <p id="source_0_span" class="source_span">Source 1</p>
-                    </div>
-                    <div id="source_1_div" class="source_div">
-                        <p class="source_titlebar" id="source_1_titlebar"><i class="arrow right" id="source_1_dropbtn"></i><b>  Look at Source 2</b></p>
-                        <p id="source_1_span" class="source_span">Source 2</p>
-                    </div>
-                    <div id="source_2_div" class="source_div">
-                        <p class="source_titlebar" id="source_2_titlebar"><i class="arrow right" id="source_2_dropbtn"></i><b>  Look at Source 3</b></p>
-                        <p id="source_2_span" class="source_span">Source 3</p>
-                    </div>
-                    <div id="source_3_div" class="source_div">
-                        <p class="source_titlebar" id="source_3_titlebar"><i class="arrow right" id="source_3_dropbtn"></i><b>  Look at Source 4</b></p>
-                        <p id="source_3_span" class="source_span">Source 4</p>
-                    </div>
-                    <div id="source_4_div" class="source_div">
-                        <p class="source_titlebar" id="source_4_titlebar"><i class="arrow right" id="source_4_dropbtn"></i><b>  Look at Source 5</b></p>
-                        <p id="source_4_span" class="source_span">Source 5</p>
-                    </div>
-                    <div id="source_5_div" class="source_div">
-                        <p class="source_titlebar" id="source_5_titlebar"><i class="arrow right" id="source_5_dropbtn"></i><b>  Look at Source 6</b></p>
-                        <p id="source_5_span" class="source_span">Source 6</p>
-                    </div>
-                    <div id="source_6_div" class="source_div">
-                        <p class="source_titlebar" id="source_6_titlebar"><i class="arrow right" id="source_6_dropbtn"></i><b>  Look at Source 7</b></p>
-                        <p id="source_6_span" class="source_span">Source 7</p>
-                    </div>
-                    <div id="source_7_div" class="source_div">
-                        <p class="source_titlebar" id="source_7_titlebar"><i class="arrow right" id="source_7_dropbtn"></i><b>  Look at Source 8</b></p>
-                        <p id="source_7_span" class="source_span">Source 8</p>
-                    </div>
-                    <div id="source_8_div" class="source_div">
-                        <p class="source_titlebar" id="source_8_titlebar"><i class="arrow right" id="source_8_dropbtn"></i><b>  Look at Source 9</b></p>
-                        <p id="source_8_span" class="source_span">Source 9</p>
-                    </div>
-                    <div id="source_9_div" class="source_div">
-                        <p class="source_titlebar" id="source_9_titlebar"><i class="arrow right" id="source_9_dropbtn"></i><b>  Look at Source 10</b></p>
-                        <p id="source_9_span" class="source_span">Source 10</p>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div id="user_decision_div">
-                <p style="font-size: 1.17em;">Do you think the claim is true or not?
-                <input id="button_readytoanswer" type="button" class="button-neutral button-decision" value="I am ready to answer.">
-                </p>
-                <input id="button_user_decision_claimtrue" type="button" class="button-neutral button-decision" value="The claim is true.">
-                <input id="button_user_decision_claimfalse" type="button" class="button-neutral button-decision" value="The claim is false.">
-            </div>
-
 
             <p style="font-size: 1.17em;" id="result_span"></p>
             
