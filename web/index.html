@@ -23,9 +23,8 @@
             <div style="margin-top: 30px;  text-align: justify;">
                 <ul>
                     <li style="margin: 10px 0;">In this experiment, your task is to answer whether a claim is true or not, with assistance from an AI system.</li>
-                    <li style="margin: 10px 0;">If your decision is correct, you gain a reward of $0.10, otherwise you do not get a reward. You will see your total reward at the end of the experiment. Your payment is $1.0 plus whatever you accumulate during this experiment.</li>
-                    <li style="margin: 10px 0;">To help you make your decision, you will see the AI's prediction about the claim's veracity, along with a confidence score. You can also access an explanation from the AI, or manually examine the sources that the AI based its prediction on, by clicking the respective drop-down buttons. These additional decision aids may help you make your decision more confidently, but they will increase the time you spend on the task.</li>
-                    <li style="margin: 10px 0;">The experiment will have you verify 50 claims in total. If you wish to quit the study early (after a minimum of 20 questions), you can press the "End study" button, which will take you to the exit page, and a Google Form for an exit questionnaire. </li>
+                    <li style="margin: 10px 0;">If your decision is correct, you gain a reward of $0.10. You will see your total reward at the end of the experiment. Your payment is $2.0 plus whatever you accumulate during this experiment.</li>
+                    <li style="margin: 10px 0;">To help you make your decision, you will see the AI's prediction about the claim's veracity, along with a confidence score. You can optionally also view an explanation from the AI, or manually examine the sources that the AI based its prediction on, by clicking the respective drop-down buttons. These additional decision aids may help you make your decision more confidently, but they will increase the time you spend on the task.</li>
                 </ul>
 
             </div>
@@ -52,7 +51,7 @@
             <div id="reward_box_mock" style="display: none">
                 Your total reward is $0.00 (0 questions answered).
             </div>
-            Please complete the <a href="https://forms.gle/yvu96soZZ18P9ePY9"
+            Please complete the <a href="https://forms.gle/yvu96soZZ18P9ePY9" target="_blank"
             style="color: black; font-weight: bold;">exit questionnaire</a> for providing feedback on the user study.
         </div>
 
@@ -61,21 +60,20 @@
             <input id="button_instructions_next" type="button" value="Next" style="margin-bottom: 10px">
 
             <div id="instructions_0">Welcome to our user study. In this experiment, your task is to answer whether a claim is true or not, with assistance from an AI system. We will first walk you through an example question with
-                images and afterwards you will annotate upto 50 examples.
+                images, and afterwards you will answer upto 20 questions.
             </div>
             <div id="instructions_1">
-                You will be shown a claim, which may or may not be correct. Your job is to decide if the claim is true or not. If your decision is correct, you gain a reward of $0.10,otherwise you do not get a reward.
+                You will be shown a claim, which may or may not be correct. Your job is to decide if the claim is true or not. If your decision is correct, you gain a reward of $0.10, otherwise you do not get a reward.
                 <img src="img/instructions_1.png">
             </div>
             <div id="instructions_2">
-                To help you make your decision, you will also get to see whether an AI thinks the claim is true or not, along with a confidence score.
+                To help you make your decision, you will be assisted by an AI. The AI works by extracting a few source passages from online, and aggregating the evidence it finds from the different passages. Based on this evidence, the AI will tell you if it thinks the claim is true or not, along with a confidence score between 0% and 100%.
                 <img src="img/instructions_2.png">
             </div>
             <div id="instructions_3">
                 <ul>
-                    <li style="margin: 10px 0;">You will also have the option to access an explanation from the AI, and manually examine the sources that the AI based its prediction on.</li>
-                    <li style="margin: 10px 0;">You can access the explanation/sources by clicking the respective drop-down buttons.</li>
-                    <li style="margin: 10px 0;"><b>Once you select either of the "The claim is true/false" options, you will not be able to access the explanation/sources anymore!</b></li>
+                    <li style="margin: 10px 0;">If you need further help to make your decision, you also have the option to view an explanation from the AI, and/or manually examine the sources that the AI based its prediction on.</li>
+                    <li style="margin: 10px 0;">You can view the explanation/sources by clicking the respective drop-down buttons.</li>
                 </ul>
                 
                 <img src="img/instructions_3.png">
@@ -85,25 +83,26 @@
                     <li style="margin: 10px 0;">The explanation is a short passage generated by the AI, summarizing its reasoning behind its prediction.</li>
                     <li style="margin: 10px 0;">The sources are a set of passages that the AI examined to come to its prediction (some of which may not actually be relevant to verifying the claim).</li> 
                     <li style="margin: 10px 0;">Examining the explanation/sources yourself may help you make your decision more confidently, but they will increase the time you spend on the task.</li> 
-                    <li style="margin: 10px 0;"><b>Accessing the explanation/sources is purely optional, you should do so if you are fine spending a bit more time to make a more confident decision.</b></li>
+                    <li style="margin: 10px 0;"><b>Viewing the explanation/sources is purely optional, you should do so if you are fine spending a bit more time to make a more confident decision.</b></li>
                 </ul>
                 <br>
-                <img src="img/instructions_4.png">
+                <img src="img/instructions_4.gif">
             </div>
             <div id="instructions_5">
                 <ul>
-                    <li style="margin: 10px 0;">If your final decision is correct, you will receive a reward of $0.10. However, you will not get to see if your decision was correct or not, your cumulative reward will only be revealed to you at the end of the experiment.</li>
-                    <li style="margin: 10px 0;">The experiment will have you verify 50 claims in total. If you wish to quit the study early (after a minimum of 20 questions), you can press the "End study" button, which will take you to the exit page, and a Google Form for an exit questionnaire.</li>
+                    <li style="margin: 10px 0;">When you are ready to make a decision, click the "I am ready to answer" button, followed by your answer. <b>Once you say you are ready to answer, you will not be able to view the explanation/sources anymore!</b></li>
+                    <li style="margin: 10px 0;">If your answer is correct, you will receive a reward of $0.10. However, you will not get to see if your answer was correct or not, your cumulative reward will only be revealed to you at the end of the experiment.</li>
+                    <li style="margin: 10px 0;">The experiment will have you verify 20 claims in total.</li>
                 </ul>
                 <br>
-                <img src="img/instructions_5.png">
+                <img src="img/instructions_5.gif">
             </div>
             <div id="instructions_6">
                  <!-- For this annotation experiment we are looking
                 at trivia and math questions. Note that the system performance may differ across question types. -->
                 <span class='color_incorrect'><b>You are not permitted to leave this tab</b></span> for the duration of the experiment. This will be monitored and violation of this can result in your submission being rejected.
                 <span class='color_incorrect'><b>Do not use other external tools to help you with the answer</b></span>: rely solely on your own knowledge and the AI in this study. 
-                The average time of the experiment is 15--20 minutes.
+                The average time of the experiment is 10 minutes.
                 <br><br>
                 You will not be paid if you already participated in this study before.
                 <br><br>
@@ -118,24 +117,17 @@
 
         <div class="main_box" id="main_box_experiment" style="display: none">
             <h3>Claim: <span id="claim_span"></span></h3>
-            <div id="user_decision_div">
-                <p style="font-size: 1.17em;">Do you think the claim is true or not?
-                <input id="button_user_decision_claimtrue" type="button" class="button-neutral button-decision" value="The claim is true.">
-                <input id="button_user_decision_claimfalse" type="button" class="button-neutral button-decision" value="The claim is false.">
-                </p>
-            </div>
 
 
             <div id="ai_assistance_div">
-                <h3>AI Prediction: <span id="ai_prediction_span"></span></h3>
-                <h3>AI Confidence: <span id="ai_confidence_span">72%</span></h3>
+                <h3 style="font-weight: normal;">The AI thinks <span id="ai_prediction_span"></span> (confidence: <span id="ai_confidence_span">72%</span>).</h3>
             </div>
             <br>
             <div id="ai_explanation_div">
                 <!--<button class="dropbtn" id="ai_explanation_dropbtn">Wish to Get An Explanation from the AI?</button> -->
                 <p class="titlebar" id="ai_explanation_titlebar">
                     <i class="arrow right" id="ai_explanation_dropbtn"></i>
-                    <b>  Wish to Get An Explanation from the AI?</b>
+                    <b>  Wish to Read An Explanation from the AI?</b>
                 </p>
                 <p id="ai_explanation_dropdown">
                     <b>Explanation: </b><span id="ai_explanation_span">The AI system thinks that the answer is correct because...</span>
@@ -192,7 +184,16 @@
                     
                 </div>
             </div>
-            
+
+            <div id="user_decision_div">
+                <p style="font-size: 1.17em;">Do you think the claim is true or not?
+                <input id="button_readytoanswer" type="button" class="button-neutral button-decision" value="I am ready to answer.">
+                </p>
+                <input id="button_user_decision_claimtrue" type="button" class="button-neutral button-decision" value="The claim is true.">
+                <input id="button_user_decision_claimfalse" type="button" class="button-neutral button-decision" value="The claim is false.">
+            </div>
+
+
             <p style="font-size: 1.17em;" id="result_span"></p>
             
             <!-- <input id="button_place_bet" type="button" class="button-neutral" value="See the result"> -->

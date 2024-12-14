@@ -26,9 +26,23 @@ function assert(condition, message) {
     }
 }
 
+function showChoices() {
+    $("#button_user_decision_claimtrue").show()
+    $("#button_user_decision_claimfalse").show()
+
+    $("#button_readytoanswer").attr("disabled", "true")
+    $("#button_readytoanswer").attr("activedecision", "true")
+}
+// Event listener for the button click
+document.getElementById('button_readytoanswer')?.addEventListener('click', showChoices);
+
+
 // Function to toggle the visibility of the div element
 function showExplanation() {
     if (time_final_decision != -1) {
+        return
+    }
+    if ($("#button_readytoanswer").attr("disabled")) {
         return
     }
 
@@ -58,24 +72,35 @@ function showAllSources() {
     if (time_final_decision != -1) {
         return
     }
+    if ($("#button_readytoanswer").attr("disabled")) {
+        return
+    }
 
     // Get the div element by its ID
     const div = document.getElementById('all_sources_div');
     if (div) {
         // Toggle the visibility
-        div.style.display = 'block';
+        div.style.display = (div.style.display == 'block') ? 'none' : 'block';
     }
     const button_div = document.getElementById('view_sources_dropbtn');
     if (button_div) {
         //Change the class to arrow vanish
-        button_div.className = 'arrow vanish';
+        button_div.className = (button_div.className == 'arrow right') ? 'arrow down' : 'arrow right';
     }
-    accessed_sources = true
-    time_to_access_sources = Date.now() - time_question_start
+    if (accessed_sources == false) {
+        accessed_sources = true
+        time_to_access_sources = Date.now() - time_question_start
+    }
 
     //$("#ai_explanation_dropdown").toggle()
-    $("#view_sources_titlebar").attr("disabled", "true")
-    $("#view_sources_titlebar").attr("activedecision", "true")
+    //$("#view_sources_titlebar").attr("disabled", "true")
+    if (($("#view_sources_titlebar").attr("activedecision") == "false") || ($("#view_sources_titlebar").attr("activedecision") == null)) {
+        $("#view_sources_titlebar").attr("activedecision", "true")
+    }
+    else {
+        $("#view_sources_titlebar").attr("activedecision", "false")
+    }
+    //$("#view_sources_titlebar").attr("activedecision", "true")
 }
 
 // Event listener for the button click
@@ -85,23 +110,28 @@ function showSource(source_num: number) {
     if (time_final_decision != -1) {
         return
     }
-    
+    if ($("#button_readytoanswer").attr("disabled")) {
+        return
+    }
+
     // Get the div element by its ID
     const div = document.getElementById(`source_${source_num}_span`);
     if (div) {
         // Toggle the visibility
-        div.style.display = 'block';
+        div.style.display = (div.style.display == 'block') ? 'none' : 'block';
     }
     const button_div = document.getElementById(`source_${source_num}_dropbtn`);
     if (button_div) {
         //Change the class to arrow down
-        button_div.className = 'arrow down';
+        button_div.className = (button_div.className == 'arrow right') ? 'arrow down' : 'arrow right';
     }
-    accessed_individual_source[source_num] = true
-    time_to_access_individual_source[source_num] = Date.now() - time_question_start
+    if (accessed_individual_source[source_num] == false) {
+        accessed_individual_source[source_num] = true
+        time_to_access_individual_source[source_num] = Date.now() - time_question_start
+    }
     //$("#ai_explanation_dropdown").toggle()
-    $(`#source_${source_num}_titlebar`).attr("disabled", "true")
-    $(`#source_${source_num}_titlebar`).attr("activedecision", "true")
+    //$(`#source_${source_num}_titlebar`).attr("disabled", "true")
+    //$(`#source_${source_num}_titlebar`).attr("activedecision", "true")
 }
 
 // Event listener for the button click
@@ -122,15 +152,9 @@ function updateUserDecision(user_decision: boolean) {
 
         time_final_decision = Date.now() - time_question_start
 
-        $("#ai_explanation_titlebar").attr("disabled", "true")
-        $("#view_sources_titlebar").attr("disabled", "true")
-        for (let source_num = 0; source_num < 10; source_num++) {
-            $(`#source_${source_num}_titlebar`).attr("disabled", "true")
-        }
-
         $("#button_next").show()
         $("#button_next").removeAttr("disabled")
-        if (question_i >= 0) {
+        if (question_i >= 19) {
             $('#button_quit').show()
             $('#button_quit').removeAttr("disabled")
         }
@@ -309,10 +333,16 @@ function show_result() {
 function next_question() {
     // restore previous state of UI
 
+    $("#button_readytoanswer").removeAttr("activedecision")
+    $("#button_readytoanswer").removeAttr("disabled")
+    $("#button_readytoanswer").show()
+
     $("#button_user_decision_claimtrue").removeAttr("activedecision")
     $("#button_user_decision_claimfalse").removeAttr("activedecision")
     $("#button_user_decision_claimtrue").removeAttr("disabled")
     $("#button_user_decision_claimfalse").removeAttr("disabled")
+    $("#button_user_decision_claimtrue").hide()
+    $("#button_user_decision_claimfalse").hide()
 
     $("#ai_explanation_dropbtn").removeAttr("disabled")
     $("#ai_explanation_dropbtn").removeAttr("activedecision")
@@ -368,7 +398,7 @@ function next_question() {
     question = data[question_i]
 
     $("#claim_span").html(question!["claim"])
-    let ai_prediction = question!["llm_prediction"] ? "The claim is true." : "The claim is false."
+    let ai_prediction = question!["llm_prediction"] ? "<span style=\"color:#347e32\">the claim is true</span>" : "<span style=\"color:#e63232\">the claim is false</span>"
     $("#ai_prediction_span").html(ai_prediction)
     $("#ai_confidence_span").html(question!["llm_confidence"])
 
