@@ -7,16 +7,13 @@ import { paramsToObject } from "./utils"
 var data: any[] = []
 let question_i = -1
 let question: any = null
-let final_user_decision: boolean
-let accessed_explanation: boolean = false
-let accessed_sources: boolean = false
-let accessed_individual_source: any[] = [false, false, false, false, false, false, false, false, false, false]
+let userselection_answeronly: number = -1
+let userselection_withexplanation: number = -1
+let userselection_withexplanationquality: number = -1
+
 let balance = 0
-let time_question_start: number
-let time_to_access_explanation: number = -1
-let time_to_access_sources: number = -1
-let time_to_access_individual_source: any[] = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
-let time_final_decision: number = -1
+let balance_increment = 0.1     // Balance updates by $0.10 for every correct selection
+
 let instruction_i: number = 0
 let count_exited_page: number = 0
 
@@ -26,156 +23,69 @@ function assert(condition, message) {
     }
 }
 
-function showChoices() {
-    $("#button_user_decision_claimtrue").show()
-    $("#button_user_decision_claimfalse").show()
+function registerAnswerOnlyUserSelection(user_choice: number) {
+    userselection_answeronly = user_choice
 
-    $("#button_readytoanswer").attr("disabled", "true")
-    $("#button_readytoanswer").attr("activedecision", "true")
+    $("#button_answeronly_usertrusts").attr("disabled", "true")
+    $("#button_answeronly_userdistrusts").attr("disabled", "true")
+    $("#button_answeronly_userunsure").attr("disabled", "true")
+    if (user_choice == 0) {
+        $("#button_answeronly_usertrusts").attr("activedecision", "true")
+    } else if (user_choice == 1) {
+        $("#button_answeronly_userdistrusts").attr("activedecision", "true")
+    } else if (user_choice == 2) {
+        $("#button_answeronly_userunsure").attr("activedecision", "true")
+    }
+    $("#ai_explanation_div").show()
 }
 // Event listener for the button click
-document.getElementById('button_readytoanswer')?.addEventListener('click', showChoices);
+document.getElementById('button_answeronly_usertrusts')?.addEventListener('click', () => registerAnswerOnlyUserSelection(0));
+document.getElementById('button_answeronly_userdistrusts')?.addEventListener('click', () => registerAnswerOnlyUserSelection(1));
+document.getElementById('button_answeronly_userunsure')?.addEventListener('click', () => registerAnswerOnlyUserSelection(2));
 
 
-// Function to toggle the visibility of the div element
-function showExplanation() {
-    if (time_final_decision != -1) {
-        return
-    }
-    if ($("#button_readytoanswer").attr("disabled")) {
-        return
-    }
+function registerWithExplanationUserSelection(user_choice: number) {
+    userselection_withexplanation = user_choice
 
-    // Get the div element by its ID
-    const div = document.getElementById('ai_explanation_dropdown');
-    if (div) {
-        // Toggle the visibility
-        div.style.display = 'block';
+    $("#button_withexplanation_usertrusts").attr("disabled", "true")
+    $("#button_withexplanation_userdistrusts").attr("disabled", "true")
+    $("#button_withexplanation_userunsure").attr("disabled", "true")
+    if (user_choice == 0) {
+        $("#button_withexplanation_usertrusts").attr("activedecision", "true")
+    } else if (user_choice == 1) {
+        $("#button_withexplanation_userdistrusts").attr("activedecision", "true")
+    } else if (user_choice == 2) {
+        $("#button_withexplanation_userunsure").attr("activedecision", "true")
     }
-    const button_div = document.getElementById('ai_explanation_dropbtn');
-    if (button_div) {
-        //Change the class to arrow down
-        button_div.className = 'arrow vanish';
-    }
-    accessed_explanation = true
-    time_to_access_explanation = Date.now() - time_question_start
+    $("#ai_explanation_quality_div").show()
+}
 
-    //$("#ai_explanation_dropdown").toggle()
-    $("#ai_explanation_titlebar").attr("disabled", "true")
-    $("#ai_explanation_titlebar").attr("activedecision", "true")
-  }
+document.getElementById('button_withexplanation_usertrusts')?.addEventListener('click', () => registerWithExplanationUserSelection(0));
+document.getElementById('button_withexplanation_userdistrusts')?.addEventListener('click', () => registerWithExplanationUserSelection(1));
+document.getElementById('button_withexplanation_userunsure')?.addEventListener('click', () => registerWithExplanationUserSelection(2));
   
-// Event listener for the button click
-document.getElementById('ai_explanation_titlebar')?.addEventListener('click', showExplanation);
+function registerWithExplanationQualityUserSelection(user_choice: number) {
+    userselection_withexplanationquality = user_choice
 
-function showAllSources() {
-    if (time_final_decision != -1) {
-        return
+    $("#button_withexplanationquality_usertrusts").attr("disabled", "true")
+    $("#button_withexplanationquality_userdistrusts").attr("disabled", "true")
+    $("#button_withexplanationquality_userunsure").attr("disabled", "true")
+    if (user_choice == 0) {
+        $("#button_withexplanationquality_usertrusts").attr("activedecision", "true")
+    } else if (user_choice == 1) {
+        $("#button_withexplanationquality_userdistrusts").attr("activedecision", "true")
+    } else if (user_choice == 2) {
+        $("#button_withexplanationquality_userunsure").attr("activedecision", "true")
     }
-    if ($("#button_readytoanswer").attr("disabled")) {
-        return
-    }
-
-    // Get the div element by its ID
-    const div = document.getElementById('all_sources_div');
-    if (div) {
-        // Toggle the visibility
-        div.style.display = (div.style.display == 'block') ? 'none' : 'block';
-    }
-    const button_div = document.getElementById('view_sources_dropbtn');
-    if (button_div) {
-        //Change the class to arrow vanish
-        button_div.className = (button_div.className == 'arrow right') ? 'arrow down' : 'arrow right';
-    }
-    if (accessed_sources == false) {
-        accessed_sources = true
-        time_to_access_sources = Date.now() - time_question_start
-    }
-
-    //$("#ai_explanation_dropdown").toggle()
-    //$("#view_sources_titlebar").attr("disabled", "true")
-    if (($("#view_sources_titlebar").attr("activedecision") == "false") || ($("#view_sources_titlebar").attr("activedecision") == null)) {
-        $("#view_sources_titlebar").attr("activedecision", "true")
-    }
-    else {
-        $("#view_sources_titlebar").attr("activedecision", "false")
-    }
-    //$("#view_sources_titlebar").attr("activedecision", "true")
+    $("#button_next").show()
+    $("#button_next").removeAttr("disabled")
 }
 
-// Event listener for the button click
-document.getElementById('view_sources_titlebar')?.addEventListener('click', showAllSources);
+document.getElementById('button_withexplanationquality_usertrusts')?.addEventListener('click', () => registerWithExplanationQualityUserSelection(0));
+document.getElementById('button_withexplanationquality_userdistrusts')?.addEventListener('click', () => registerWithExplanationQualityUserSelection(1));
+document.getElementById('button_withexplanationquality_userunsure')?.addEventListener('click', () => registerWithExplanationQualityUserSelection(2));
 
-function showSource(source_num: number) {
-    if (time_final_decision != -1) {
-        return
-    }
-    if ($("#button_readytoanswer").attr("disabled")) {
-        return
-    }
 
-    // Get the div element by its ID
-    const div = document.getElementById(`source_${source_num}_span`);
-    if (div) {
-        // Toggle the visibility
-        div.style.display = (div.style.display == 'block') ? 'none' : 'block';
-    }
-    const button_div = document.getElementById(`source_${source_num}_dropbtn`);
-    if (button_div) {
-        //Change the class to arrow down
-        button_div.className = (button_div.className == 'arrow right') ? 'arrow down' : 'arrow right';
-    }
-    if (accessed_individual_source[source_num] == false) {
-        accessed_individual_source[source_num] = true
-        time_to_access_individual_source[source_num] = Date.now() - time_question_start
-    }
-    //$("#ai_explanation_dropdown").toggle()
-    //$(`#source_${source_num}_titlebar`).attr("disabled", "true")
-    //$(`#source_${source_num}_titlebar`).attr("activedecision", "true")
-}
-
-// Event listener for the button click
-document.getElementById('source_0_titlebar')?.addEventListener('click', () => showSource(0));
-document.getElementById('source_1_titlebar')?.addEventListener('click', () => showSource(1));
-document.getElementById('source_2_titlebar')?.addEventListener('click', () => showSource(2));
-document.getElementById('source_3_titlebar')?.addEventListener('click', () => showSource(3));
-document.getElementById('source_4_titlebar')?.addEventListener('click', () => showSource(4));
-document.getElementById('source_5_titlebar')?.addEventListener('click', () => showSource(5));
-document.getElementById('source_6_titlebar')?.addEventListener('click', () => showSource(6));
-document.getElementById('source_7_titlebar')?.addEventListener('click', () => showSource(7));
-document.getElementById('source_8_titlebar')?.addEventListener('click', () => showSource(8));
-document.getElementById('source_9_titlebar')?.addEventListener('click', () => showSource(9));
-
-function updateUserDecision(user_decision: boolean) {
-    if (question_i != -1) {
-        final_user_decision = user_decision ? true : false
-
-        time_final_decision = Date.now() - time_question_start
-
-        $("#button_next").show()
-        $("#button_next").removeAttr("disabled")
-        if (question_i >= 19) {
-            $('#button_quit').show()
-            $('#button_quit').removeAttr("disabled")
-        }
-        //$("#button_user_decision_claimtrue").attr("disabled", "true")
-        //$("#button_user_decision_claimfalse").attr("disabled", "true")
-        if (user_decision) {
-            final_user_decision = true
-            $("#button_user_decision_claimtrue").attr("activedecision", "true")
-            $("#button_user_decision_claimfalse").attr("activedecision", "false")
-        }
-        else {
-            final_user_decision = false
-            $("#button_user_decision_claimfalse").attr("activedecision", "true")
-            $("#button_user_decision_claimtrue").attr("activedecision", "false")
-        }
-
-    }
-}
-
-$("#button_user_decision_claimtrue").on("click", () => updateUserDecision(true))
-$("#button_user_decision_claimfalse").on("click", () => updateUserDecision(false))
 
 
 function next_instructions(increment: number) {
@@ -186,14 +96,15 @@ function next_instructions(increment: number) {
     } else {
         $("#button_instructions_prev").removeAttr("disabled")
     }
-    if (instruction_i >= 6) {
+    if (instruction_i >= 5) {
         $("#instructions_and_decorations").show()
         $("#button_instructions_next").val("Start study")
     } else {
         $("#instructions_and_decorations").hide()
         $("#button_instructions_next").val("Next")
     }
-    if (instruction_i == 7) {
+    if (instruction_i == 6) {
+        $("#instructions_and_decorations").show()
         $("#main_box_instructions").hide()
         $("#main_box_experiment").show()
         next_question()
@@ -209,29 +120,29 @@ $("#button_instructions_prev").on("click", () => next_instructions(-1))
 
 $("#button_next").on("click", () => {
 
-    let gt_label: boolean = question!["gt_label"]
-    let user_is_correct: boolean = gt_label == final_user_decision
-    if (user_is_correct) {
-        balance += 0.1
-    }
+    // Update the user balance
+    let old_balance = balance
+    update_balance()
 
     if (question_i != -1) {
         let logged_data = {
             "question_i": question_i,
-            "user_balance_post_interaction": balance,
-            "final_user_decision": final_user_decision,
-            "user_is_correct": user_is_correct,
-            "accessed_explanation": accessed_explanation,
-            "accessed_sources": accessed_sources,
-            "accessed_individual_source": accessed_individual_source,
+            "user_selections": {
+                "answeronly": userselection_answeronly,
+                "withexplanation": userselection_withexplanation,
+                "withexplanationquality": userselection_withexplanationquality
+            },
+            "user_is_correct": {
+                "answeronly": is_user_correct(userselection_answeronly),
+                "withexplanation": is_user_correct(userselection_withexplanation),
+                "withexplanationquality": is_user_correct(userselection_withexplanationquality)
+            },
+            "balance": {
+                "old": old_balance,
+                "new": balance
+            }
         }
 
-        logged_data['times'] = {
-            "access_explanation": time_to_access_explanation,
-            "access_sources": time_to_access_sources,
-            "access_individual_source": time_to_access_individual_source,
-            "final_decision": time_final_decision,
-        }
         logged_data['question'] = question
         logged_data['count_exited_page'] = count_exited_page
         log_data(logged_data)
@@ -242,93 +153,24 @@ $("#button_next").on("click", () => {
     next_question()
 });
 
-$("#button_quit").on("click", () => {
-    let gt_label: boolean = question!["gt_label"]
-    let user_is_correct: boolean = gt_label == final_user_decision
-    if (user_is_correct) {
-        balance += 0.1
+
+
+function is_user_correct(selection) {
+    if (selection != 2) {
+        let correct_selection = 1 - question["prediction_is_correct"] // 0 if AI is correct, 1 if incorrect
+        return 1 ? selection == correct_selection : 0
     }
-
-    if (question_i != -1) {
-        let logged_data = {
-            "question_i": question_i,
-            "user_balance_post_interaction": balance,
-            "final_user_decision": final_user_decision,
-            "accessed_explanation": accessed_explanation,
-            "accessed_sources": accessed_sources,
-            "accessed_individual_source": accessed_individual_source,
-        }
-
-        logged_data['times'] = {
-            "access_explanation": time_to_access_explanation,
-            "access_sources": time_to_access_sources,
-            "access_individual_source": time_to_access_individual_source,
-            "final_decision": time_final_decision,
-        }
-        logged_data['question'] = question
-        logged_data['count_exited_page'] = count_exited_page
-        log_data(logged_data)
-        count_exited_page = 0
-    }
-
-    $("#main_box_experiment").hide()
-    if (MOCKMODE) {
-        $('#reward_box_mock').text(`Your total reward is $${balance.toFixed(2)} (${question_i+1} questions answered).`)
-        $('#reward_box_mock').show()
-        $("#main_box_end_mock").show()
-    } else {
-        $('#reward_box').text(`Your total reward is $${balance.toFixed(2)} (${question_i+1} questions answered).`)
-        $('#reward_box').show()
-        $("#main_box_end").show()
-    }
-    return
-})
-
-
-
-function show_result() {
-
-
-    //let ai_is_correct: boolean = question!["llm_is_correct"]
-    //let message = "Correct answer: <b>Option " + correct_option + "</b>.<br>"
-    //if (user_is_correct) {
-    //    message += "You picked Option " + final_user_decision + ", which was <span class='color_correct'><b>correct</b></span>.<br>"
-    //}
-    //else {
-    //    message += "You picked Option " + final_user_decision + ", which was <span class='color_incorrect'><b>incorrect</b></span>.<br>"
-    //}
-    //if (ai_is_correct) {
-    //    message += "The AI picked Option " + question!["ai_prediction"] + ", which was <span class='color_correct'><b>correct<b></span>.<br>"
-    //}
-    //else {
-    //    message += "The AI picked Option " + question!["ai_prediction"] + ", which was <span class='color_incorrect'><b>incorrect</b></span>.<br>"
-    //}
-    //if (user_is_correct) {
-    //    message += "<span class='color_correct'><b>You receive a reward of $0.10.</b></span>"
-    //    balance += 0.1
-    //}
-    //else {
-    //    message += "<span class='color_incorrect'><b>You do not receive any reward.</b></span>"
-    //}
-    //message += "<br>"
-    //if (success) {
-    //    message += `You gain $${(bet_val*bet_val_ratio).toFixed(2)}.`
-    //    balance += bet_val*bet_val_ratio
-    //} else {
-    //    message += `You lose $${(bet_val/1.0).toFixed(2)}.`
-    //    balance -= bet_val/1.0
-    //    balance = Math.max(0, balance)
-    //}
-    //$("#balance").text(`Balance: $${balance.toFixed(2)} + $1.0`)
-    //$("#result_span").html(message)
-    ////$("#button_next").show()
-    //$("#result_span").show()
-    //$("#button_place_bet").hide()
-
-    //$('#range_val').attr("disabled", "true")
+    return -1
 }
 
-//$("#button_place_bet").on("click", show_result)
+function update_balance() {
+    if (userselection_withexplanationquality != 2) {
+        let correct_selection = 1 - question["prediction_is_correct"] // 0 if AI is correct, 1 if incorrect
+        if (userselection_withexplanationquality == correct_selection) {
+            balance += balance_increment
+        }
+    }
+}
 
 function next_question() {
     // restore previous state of UI
@@ -337,44 +179,29 @@ function next_question() {
     $("#button_readytoanswer").removeAttr("disabled")
     $("#button_readytoanswer").show()
 
-    $("#button_user_decision_claimtrue").removeAttr("activedecision")
-    $("#button_user_decision_claimfalse").removeAttr("activedecision")
-    $("#button_user_decision_claimtrue").removeAttr("disabled")
-    $("#button_user_decision_claimfalse").removeAttr("disabled")
-    $("#button_user_decision_claimtrue").hide()
-    $("#button_user_decision_claimfalse").hide()
+    $("#button_answeronly_usertrusts").removeAttr("activedecision")
+    $("#button_answeronly_usertrusts").removeAttr("disabled")
+    $("#button_answeronly_userdistrusts").removeAttr("activedecision")
+    $("#button_answeronly_userdistrusts").removeAttr("disabled")
+    $("#button_answeronly_userunsure").removeAttr("activedecision")
+    $("#button_answeronly_userunsure").removeAttr("disabled")
 
-    $("#ai_explanation_dropbtn").removeAttr("disabled")
-    $("#ai_explanation_dropbtn").removeAttr("activedecision")
-    $("#ai_explanation_dropbtn").attr("class", "arrow right")
-    $("#ai_explanation_titlebar").removeAttr("disabled")
-    $("#ai_explanation_titlebar").removeAttr("activedecision")
-    $("#ai_explanation_dropdown").hide()
+    $("#button_withexplanation_usertrusts").removeAttr("activedecision")
+    $("#button_withexplanation_usertrusts").removeAttr("disabled")
+    $("#button_withexplanation_userdistrusts").removeAttr("activedecision")
+    $("#button_withexplanation_userdistrusts").removeAttr("disabled")
+    $("#button_withexplanation_userunsure").removeAttr("activedecision")
+    $("#button_withexplanation_userunsure").removeAttr("disabled")
 
-    $("#view_sources_dropbtn").removeAttr("disabled")
-    $("#view_sources_dropbtn").removeAttr("activedecision")
-    $("#view_sources_dropbtn").attr("class", "arrow right")
-    $("#view_sources_titlebar").removeAttr("disabled")
-    $("#view_sources_titlebar").removeAttr("activedecision")
-    $("#all_sources_div").hide()
+    $("#button_withexplanationquality_usertrusts").removeAttr("activedecision")
+    $("#button_withexplanationquality_usertrusts").removeAttr("disabled")
+    $("#button_withexplanationquality_userdistrusts").removeAttr("activedecision")
+    $("#button_withexplanationquality_userdistrusts").removeAttr("disabled")
+    $("#button_withexplanationquality_userunsure").removeAttr("activedecision")
+    $("#button_withexplanationquality_userunsure").removeAttr("disabled")
 
-    for (let i = 0; i < 10; i++) {
-        $(`#source_${i}_span`).hide()
-        $(`#source_${i}_dropbtn`).removeAttr("disabled")
-        $(`#source_${i}_dropbtn`).removeAttr("activedecision")
-        $(`#source_${i}_dropbtn`).attr("class", "arrow right")
-        $(`#source_${i}_titlebar`).removeAttr("disabled")
-        $(`#source_${i}_titlebar`).removeAttr("activedecision")
-    }
-
-    accessed_explanation = false
-    accessed_sources = false
-    accessed_individual_source = [false, false, false, false, false, false, false, false, false, false]
-
-    time_to_access_explanation = -1
-    time_to_access_sources = -1
-    time_to_access_individual_source = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
-    time_final_decision = -1
+    $("#ai_explanation_div").hide()
+    $("#ai_explanation_quality_div").hide()
     
 
     $("#button_next").hide()
@@ -385,11 +212,11 @@ function next_question() {
     if (question_i >= data.length) {
         $("#main_box_experiment").hide()
         if (MOCKMODE) {
-            $('#reward_box_mock').text(`Your total reward is $${balance.toFixed(2)} (${question_i+1} questions answered).`)
+            $('#reward_box_mock').text(`Your total reward is $${balance.toFixed(2)} (${question_i} questions answered) + $2.`)
             $('#reward_box_mock').show()
             $("#main_box_end_mock").show()
         } else {
-            $('#reward_box').text(`Your total reward is $${balance.toFixed(2)} (${question_i+1} questions answered).`)
+            $('#reward_box').text(`Your total reward is $${balance.toFixed(2)} (${question_i} questions answered) + $2.`)
             $('#reward_box').show()
             $("#main_box_end").show()
         }
@@ -397,15 +224,14 @@ function next_question() {
     }
     question = data[question_i]
 
-    $("#claim_span").html(question!["claim"])
-    let ai_prediction = question!["llm_prediction"] ? "<span style=\"color:#347e32\">the claim is true</span>" : "<span style=\"color:#e63232\">the claim is false</span>"
-    $("#ai_prediction_span").html(ai_prediction)
-    $("#ai_confidence_span").html(question!["llm_confidence"])
+    $("#question_span").html(question!["question"])
+    $("#ai_prediction_span").html(question!["predicted_answer"])
+    $("#ai_explanation_span").html(question!["generated_rationale"])
+    let visual_fidelity_conf = Math.round(question!["visual fidelity"] * 100)
+    $("#explanation_fidelity_span").html(`${visual_fidelity_conf}%`)
+    let visual_contrastiveness_conf = Math.round(question!["contrastiveness"] * 100)
+    $("#explanation_contrastiveness_span").html(`${visual_contrastiveness_conf}%`)
 
-    $("#ai_explanation_span").html(question!["llm_explanation"])
-    for (let i = 0; i < question!["sources"].length; i++) {
-        $(`#source_${i}_span`).html(question!["sources"][i])
-    }
 
     // set bet value ratio
     //if(question.hasOwnProperty("reward_ratio")) {
@@ -417,7 +243,7 @@ function next_question() {
     //    bet_val_ratio = 1
     //}
 
-    time_question_start = Date.now()
+    //time_question_start = Date.now()
     $("#progress").text(`Progress: ${question_i + 1} / ${data.length}`)
 }
 
@@ -432,7 +258,7 @@ if (UIDFromURL != null) {
     globalThis.uid = UIDFromURL as string
     if (globalThis.uid == "prolific_random") {
         let queue_id = `${Math.floor(Math.random() * 10)}`.padStart(3, "0")
-        globalThis.uid = `${urlParams.get("prolific_queue_name")}_${queue_id}`
+        globalThis.uid = `${urlParams.get("prolific_queue_name")}/${queue_id}`
     }
 } else if (DEVMODE) {
     globalThis.uid = "demo"

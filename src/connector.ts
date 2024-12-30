@@ -34,7 +34,7 @@ export async function log_data(data): Promise<any> {
             SERVER_LOG_ROOT + "log",
             {
                 data: JSON.stringify({
-                    project: "llm-trust-study/"+data['url_data']['study_id'],
+                    project: "vlm-rationales-study/"+data['url_data']['study_id'],
                     uid: globalThis.uid+"_"+data['url_data']['prolific_id'],
                     payload: JSON.stringify(data),
                 }),

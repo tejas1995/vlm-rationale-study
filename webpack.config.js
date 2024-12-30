@@ -26,7 +26,7 @@ module.exports = (env, argv) => {
             directory: path.resolve(__dirname, 'web'),
          },
          compress: true,
-         port: 9000,
+         port: 8000,
       },
       plugins: [
          new webpack.DefinePlugin({
