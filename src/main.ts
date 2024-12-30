@@ -158,7 +158,7 @@ $("#button_next").on("click", () => {
 function is_user_correct(selection) {
     if (selection != 2) {
         let correct_selection = 1 - question["prediction_is_correct"] // 0 if AI is correct, 1 if incorrect
-        return 1 ? selection == correct_selection : 0
+        return selection == correct_selection ? 1 : 0
     }
     return -1
 }
@@ -253,6 +253,16 @@ const urlParams = new URLSearchParams(window.location.search);
 const startOverride = urlParams.get('start');
 const UIDFromURL = urlParams.get("uid")
 globalThis.url_data = paramsToObject(urlParams.entries())
+
+if (globalThis.url_data['study_id'] == null) {
+    globalThis.url_data['study_id'] = "demo_study"
+}
+if (globalThis.url_data['prolific_id'] == null) {
+    globalThis.url_data['prolific_id'] = "demo_user"
+}
+if (globalThis.url_data['session_id'] == null) {
+    globalThis.url_data['session_id'] = "demo_session"
+}
 
 if (UIDFromURL != null) {
     globalThis.uid = UIDFromURL as string

@@ -23,7 +23,13 @@ export async function log_data(data): Promise<any> {
     data["url_data"] = globalThis.url_data
     console.log("Data")
     if (!("study_id" in data['url_data'])) {
-        data['url_data']["study_id"] = "trialrun_studies"
+        data['url_data']["study_id"] = "demo_study"
+    }
+    if (!("prolific_id" in data['url_data'])) {
+        data['url_data']["prolific_id"] = "demo_user"
+    }
+    if (!("session_id" in data['url_data'])) {
+        data['url_data']["session_id"] = "demo_session"
     }
     data["url_data"]["queue_id"] = globalThis.uid
     console.log("logged", data)

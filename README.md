@@ -6,9 +6,9 @@ Begin by making a fork of this GitHub repo. You can rename the forked repo to wh
 
 There are three main steps to running the project: preparing the data, deploying the project, and approving studies + downloading logs after the study is completed.
 
-### Preparing the data
+### Pt. 1: Preparing the data
 
-1. Place your VLM answer+rationale outputs as a JSON file in the `data` folder. Look at `data/sample_data_llava1.5outputs.json` for an example of the format.
+1. Place your VLM answer+rationale outputs as a JSON file in the `data` folder. Look at `data/llava1.5_with_image.json` for an example of the format.
 
 2. We will now create a set of user queues, where each queue is a subset of your VLM outputs that will be presented in sequence to the user. Run the following command to prepare the user queues:
 
@@ -16,9 +16,9 @@ There are three main steps to running the project: preparing the data, deploying
     python src_utils/generate_user_queues.py --data data/<DATA_FILENAME>.json --name <NAME> --num_instances_per_queue <I> --num_queues <Q> --seed <S>
     ```
 
-   This will create `Q` user queues in `web/baked_queues/<NAME>_q<Q>_i<I>_s<S>/` where each queue has `I` instances. The seed `S` is used to sample the instances in the queue. The `NAME` parameter is used to identify the set of user queues (e.g. for the sample data file, an appropriate name might be `sample_llava1.5outputs`).
+   This will create `Q` user queues in `web/baked_queues/<NAME>_q<Q>_i<I>_s<S>/` where each queue has `I` instances. The seed `S` is used to sample the instances in the queue. The `NAME` parameter is used to identify the set of user queues (e.g. for the sample data file, an appropriate name might be `llava1.5_with_image`).
 
-### Deploying the project
+### Pt. 2: Deploying the project
 
 1. **Modify package.json**: Go to `package.json`, and modify lines 3 and 25. Line 3 should point to the URL of your project's webpage, which will be `https://<GITHUB_USERNAME>.github.io/REPO_NAME`. Line 25 should point to the URL of the GitHub repo, which will be `https://<GITHUB_USERNAME>.github.io/REPO_NAME`.
 
@@ -30,11 +30,13 @@ There are three main steps to running the project: preparing the data, deploying
     
     Instead, you can go to `http://localhost:8000?uid=<QUEUE_NAME>/000`, which will load data for the first queue in the set of user queues created in the directory `web/baked_queues/<QUEUE_NAME>/`. Instead of `000`, you can replace it with any other instance number from `0` to `I-1`, padded with zeros to make it three digits long.
 
-    When you are playing around with the interface locally, you can check the console to (`Inspect Element` -> `Console`) to see the logs that are printed. This will help you debug any issues that you encounter.
+    When you are playing around with the interface locally, you can check the Chrome console (`Inspect Element` -> `Console`) to see the logs that are printed. This will help you debug any issues that you encounter.
 
 4. **Deploy the project:** Run `npm run deploy`. This will build the project and deploy it to GitHub pages.
 
     URL for deployed project: `https://<GITHUB_USERNAME>.github.io/<REPO_NAME>?uid=prolific_random&prolific_queue_name=<QUEUE_NAME>`. Replace `<QUEUE_NAME>` with the name of one of the sets of user queues that were created in `web/baked_queues`.
+
+    An example of a deployed URL: `https://tejas1995.github.io/vlm-rationale-study/?uid=prolific_random&prolific_queue_name=llava1.5_with_image_q5_i5_s0`
 
 5. **Launch a study on Prolific:** To run a study on prolific, you will need to add some additional fields to the URL:
 
@@ -46,9 +48,9 @@ There are three main steps to running the project: preparing the data, deploying
 
     ```https://<GITHUB_USERNAME>.github.io/<REPO_NAME>/?prolific_id={{%PROLIFIC_PID%}}&study_id={{%STUDY_ID%}}&session_id={{%SESSION_ID%}}&uid=prolific_random&prolific_queue_name=<QUEUE_NAME>```
 
-    If you are piloting the interface, set `study_id` and `session_id` to `demo`, and `prolific_id` to the name of whoever is doing the pilot (e.g. `keyu`).
+    If you are piloting the interface, set `prolific_id` to the name of whoever is doing the pilot (e.g. `keyu`), the other fields get set to default values.
 
-### Downloading the logs
+### Pt. 3: Downloading the logs
 
 After the study is completed, you need to download the logs, approve the user studies and pay out bonuses. I have written a script that downloads the logs for you, and allows you to go through each user one-by-one and decide to approve/reject their submission and pay out the bonus if approved. You can use the following command:
 
