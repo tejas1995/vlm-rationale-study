@@ -1,0 +1,47 @@
+[
+  {
+    "question_id": "5",
+    "question": "The thing on the animal to the left's head is similar to what is on the head of what else? Choices: devil, zombie, vampire, witch",
+    "predicted_answer": "Witch",
+    "prediction_is_correct": 0,
+    "generated_rationale": "The horns on the animal to the left's head are similar to the horns on the head of the witch in the image. Both the horns on the animal and the horns on the witch are large and pointy, giving them a similar appearance.",
+    "visual fidelity": 0.25,
+    "contrastiveness": 0.28572173222460584
+  },
+  {
+    "question_id": "8",
+    "question": "What is the person on the left doing with their body? Choices: crouching, leaping, flying, twirling",
+    "predicted_answer": "Leaping",
+    "prediction_is_correct": 0,
+    "generated_rationale": "The person on the left is leaping into the air while riding a wave on a surfboard. This action demonstrates their skill and control over the surfboard, as they are able to launch themselves into the air and maintain balance during the jump. Leaping is a common maneuver in surfing, as it allows the surfer to perform aerial tricks or simply enjoy the thrill of being airborne above the water.",
+    "visual fidelity": 0.3333333333333333,
+    "contrastiveness": 0.6050786650380716
+  },
+  {
+    "question_id": "9",
+    "question": "What type of pants is the man on the right wearing? Choices: linen, corduroy, silk, denim",
+    "predicted_answer": "Denim",
+    "prediction_is_correct": 1,
+    "generated_rationale": "The man on the right is wearing denim pants.",
+    "visual fidelity": 1.0,
+    "contrastiveness": 0.3030343625512671
+  },
+  {
+    "question_id": "0",
+    "question": "What is in the motorcyclist's mouth? Choices: toothpick, food, popsicle stick, cigarette",
+    "predicted_answer": "Cigarette",
+    "prediction_is_correct": 1,
+    "generated_rationale": "The motorcyclist has a cigarette in his mouth. This is evident from the fact that he is smoking a cigarette while riding the motorcycle.",
+    "visual fidelity": 0.0,
+    "contrastiveness": 0.9995542669739426
+  },
+  {
+    "question_id": "7",
+    "question": "What is the descriptive word for this surface? Choices: barren, crowded, minimalist, empty",
+    "predicted_answer": "Empty",
+    "prediction_is_correct": 0,
+    "generated_rationale": "The surface in the image is described as empty. This implies that there are no other objects or items on the surface, making it a minimalist and uncluttered space. The presence of a black cat sitting in front of a computer screen further emphasizes the emptiness of the surface, as the cat is the only object occupying the space.",
+    "visual fidelity": 0.5,
+    "contrastiveness": 0.36991785362325547
+  }
+]

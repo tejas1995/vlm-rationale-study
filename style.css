@@ -8,7 +8,7 @@ body {
 }
 
 .main_box {
-    background-color: white; 
+    background-color: rgb(247, 247, 247); 
     border: 2px solid #1A1A1A;
     border-radius: 10px;
     padding: 10px;
@@ -160,48 +160,6 @@ input[type="button"]:hover:not([disabled]) {
     line-height: normal;
     margin: 0 0 0 10px;
     padding: 6px 6px;
-}
-
-#view_sources_div {
-    border: 2px solid #1A1A1A;
-    border-radius: 10px;
-    margin: 0 0 0 0;
-}
-
-#view_sources_titlebar {
-    line-height: normal;
-    padding: 10px 10px 10px 20px;
-    border-radius: 7px 7px 0 0;
-}
-
-.source_div {
-    font-size: 1em;
-    margin: 5px 5px 5px 5px;
-    border: 2px solid #1A1A1A;
-    border-radius: 10px;
-}
-
-#all_sources_div {
-    margin: 10px 0;
-    padding: 10px;
-}
-
-.source_titlebar {
-    line-height: normal;
-    margin: 0 0 0 0;
-    padding: 5px 5px 5px 10px;
-    border-radius: 3px 3px 0 0;
-    cursor:pointer;
-}
-
-.source_div {
-    border: 2px solid #1A1A1A;
-    border-radius: 10px;
-}
-
-.source_span {
-    font-size: 0.9em;
-    padding: 5px 5px 5px 5px;
 }
 
 .arrow {
