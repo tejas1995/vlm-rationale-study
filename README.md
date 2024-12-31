@@ -1,5 +1,7 @@
 # Study interface for evaluating VLM rationales 
 
+These are instructions for setting up and editing the web interface for the VLM rationales evaluation study. An example of an initial version of the study can be found [here](https://tejas1995.github.io/vlm-rationale-study/?uid=prolific_random&prolific_queue_name=llava1.5_with_image_q5_i5_s0).
+
 Begin by making a fork of this GitHub repo. You can rename the forked repo to whatever you want. Then clone the forked repo to your local machine. You will also need `secret.py` from me, which contains the API key for the logging server.
 
 ## Instructions for running the project
